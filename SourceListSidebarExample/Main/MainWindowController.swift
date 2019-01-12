@@ -13,8 +13,6 @@ import AppKit
 
 class MainWindowController: NSWindowController {
     
-    let accountManager = AccountsManager.init()
-    
     var mainSplitViewController: MainSplitViewController? = nil
     var mainSidebarViewController: MainSidebarViewController? = nil
     var mainContentViewController: MainContentViewController? = nil
@@ -45,12 +43,8 @@ class MainWindowController: NSWindowController {
     
     func onRefreshAccounts() {
         print("MainWindowController: onRefreshAccounts")
-        if mainSidebarViewController != nil {
-            mainContentViewController?.clearAccountView()
-            mainSidebarViewController?.onAccountsChange()
-        } else {
-            print("MainWindowController: onRefreshAccounts mainSidebarViewController is nil!")
-        }
+        let appDelegate = NSApplication.shared.delegate as! AppDelegate
+        appDelegate.accountsManager.getAccounts()
     }
 
     func dialogOkCancel(question: String, text: String) -> Bool {

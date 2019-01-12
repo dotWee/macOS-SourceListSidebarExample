@@ -20,7 +20,6 @@ class AddAccountViewController: NSViewController {
     @IBOutlet weak var popUpButtonProvider: NSPopUpButton!
     
     let disposeBag = DisposeBag.init()
-    let accountsManager = AccountsManager.init()
     
     let items: [String] = [
         ProviderManager.asString(provider: Provider.Facebook)!,
@@ -31,9 +30,10 @@ class AddAccountViewController: NSViewController {
         let username = textFieldUsername.stringValue
         let provider = ProviderManager.PROVIDERS_LIST[popUpButtonProvider.indexOfSelectedItem]
         
-        let account = accountsManager.addAccount(username: username, provider: provider)
+        let appDelegate = NSApplication.shared.delegate as! AppDelegate
+        let account = appDelegate.accountsManager.addAccount(username: username, provider: provider)
         
-        print("NewAccountViewController: Created account=\(String(describing: account)) with values username=\(username) provider=\(provider)")
+        print("AddAccountViewController: Created account=\(String(describing: account)) with values username=\(username) provider=\(provider)")
         self.dismiss(self)
     }
     
@@ -46,14 +46,16 @@ class AddAccountViewController: NSViewController {
         
         // Do view setup here.
         self.popUpButtonProvider.addItems(withTitles: self.items)
+        
+        let appDelegate = NSApplication.shared.delegate as! AppDelegate
         self.textFieldUsername
             .rx.text
             .distinctUntilChanged()
             .subscribe(onNext: { (usernameValue) in
-                print("onNext: \(String(describing: usernameValue))")
+                print("AddAccountViewController: onNext username=\(String(describing: usernameValue))")
                 
                 self.buttonOk.isEnabled = usernameValue != nil && !(usernameValue?.isEmpty)!
-            }).disposed(by: disposeBag)
+            }).disposed(by: appDelegate.mainDisposeBag)
     }
     
 }

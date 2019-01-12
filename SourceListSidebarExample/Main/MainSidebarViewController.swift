@@ -20,39 +20,36 @@ class MainSidebarViewController: NSViewController {
     @IBOutlet weak var outlineView: NSOutlineView!
     
     var mainWindowController: MainWindowController? = nil
-    let accountManager = AccountsManager.init()
     var accounts: [Account] = []
     var providers: [Int] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.providers.removeAll()
+        for provider in ProviderManager.PROVIDERS_LIST {
+            providers.append(ProviderManager.asInt(provider: provider))
+        }
+        
         // Do view setup here.
-        self.onAccountsChange()
+        let appDelegate = NSApplication.shared.delegate as! AppDelegate
+        self.accounts = appDelegate.accountsManager.accounts.value ?? []
+        appDelegate.accountsManager.accounts.asObservable()
+            .subscribe(onNext: { (accounts) in
+                print("MainSidebarViewController: onNext accounts=\(String(describing: accounts))")
+                if accounts != nil {
+                    self.accounts = accounts!
+                }
+                self.outlineView.reloadData()
+            }).disposed(by: appDelegate.mainDisposeBag)
         
         self.outlineView.delegate = self
         self.outlineView.dataSource = self
     }
     
     override func viewDidAppear() {
-        self.mainWindowController = self.view.window?.windowController as! MainWindowController
+        self.mainWindowController = self.view.window?.windowController as? MainWindowController
         self.mainWindowController!.mainSidebarViewController = self
-    }
-    
-    func onAccountsChange() {
-        self.accounts = []
-        self.providers = []
-        
-        for provider in ProviderManager.PROVIDERS_LIST {
-            providers.append(ProviderManager.asInt(provider: provider))
-        }
-        
-        if let data = accountManager.getAccounts() {
-            self.accounts = data
-            
-        }
-        
-        self.outlineView.reloadData()
     }
 }
 

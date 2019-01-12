@@ -25,7 +25,9 @@ class MainContentViewController: NSViewController {
     
     @IBAction func onButtonDeleteAccountAction(_ sender: NSButton) {
         if self.mainWindowController != nil {
-            self.mainWindowController?.accountManager.deleteAccount(account: account!)
+            
+            let appDelegate = NSApplication.shared.delegate as! AppDelegate
+            appDelegate.accountsManager.deleteAccount(account: account!)
             self.mainWindowController?.onRefreshAccounts()
             self.clearAccountView()
         }
@@ -42,12 +44,13 @@ class MainContentViewController: NSViewController {
     }
     
     override func viewDidAppear() {
-        self.mainWindowController = self.view.window?.windowController as! MainWindowController
+        self.mainWindowController = self.view.window?.windowController as? MainWindowController
         self.mainWindowController!.mainContentViewController = self
         
+        let appDelegate = NSApplication.shared.delegate as! AppDelegate
         if self.mainWindowController != nil {
             self.mainWindowController!.selectedAccount.asObservable().subscribe(onNext: { (account) in
-                print("MainContentViewController: onNext account=\(account)")
+                print("MainContentViewController: onNext account=\(String(describing: account))")
                 
                 self.account = account
                 if account != nil {
@@ -55,10 +58,17 @@ class MainContentViewController: NSViewController {
                 } else {
                     self.clearAccountView()
                 }
-            })
+            }).disposed(by: appDelegate.mainDisposeBag)
+            
+            
         } else {
             print("MainContentViewController: Error, can't bind selectedAccount")
         }
+        
+        // Clear account view when data is changed
+        appDelegate.accountsManager.accounts.asObservable().subscribe(onNext: { (accounts) in
+            self.clearAccountView()
+        }).disposed(by: appDelegate.mainDisposeBag)
     }
     
     func clearAccountView() {

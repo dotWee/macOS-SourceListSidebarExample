@@ -6,16 +6,20 @@
 //  Copyright © 2019 Lukas Wolfsteiner. All rights reserved.
 //
 
+import RxSwift
+import RxCocoa
 import Cocoa
+import AppKit
 
-class AccountsManager: NSObject {
+class AccountsManager {
     let accountEntityName = "Account"
     
+    let accounts: Variable<[Account]?> = Variable([])
     let context: NSManagedObjectContext
     
-    override init() {
-        let appDelegate = NSApplication.shared.delegate as! AppDelegate
+    init(appDelegate: AppDelegate) {
         self.context = appDelegate.persistentContainer.viewContext
+        self.accounts.value = self.getAccounts()
     }
     
     func addAccount(username: String, provider: Provider) -> Account? {
@@ -32,6 +36,8 @@ class AccountsManager: NSObject {
 
         do {
             try context.save()
+            
+            self.accounts.value = getAccounts()
             return newAccount
         } catch {
             print(error)
@@ -47,6 +53,8 @@ class AccountsManager: NSObject {
         } catch {
             print(error)
         }
+        
+        self.accounts.value = getAccounts()
     }
     
     func deleteAll() {
@@ -55,6 +63,8 @@ class AccountsManager: NSObject {
                 self.deleteAccount(account: account)
             }
         }
+        
+        self.accounts.value = getAccounts()
     }
     
     func getAccounts() -> [Account]? {
@@ -63,6 +73,7 @@ class AccountsManager: NSObject {
         
         do {
             let result = try context.fetch(request) as! [Account]
+            self.accounts.value = result
             return result
         } catch {
             print("Failed")

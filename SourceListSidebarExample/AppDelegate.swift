@@ -6,6 +6,7 @@
 //  Copyright © 2019 Lukas Wolfsteiner. All rights reserved.
 //
 
+import RxSwift
 import Cocoa
 
 @NSApplicationMain
@@ -19,8 +20,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Insert code here to tear down your application
     }
 
+    var mainDisposeBag: DisposeBag = DisposeBag.init()
+    lazy var accountsManager: AccountsManager = AccountsManager.init(appDelegate: self)
+    
     // MARK: - Core Data stack
-
     lazy var persistentContainer: NSPersistentContainer = {
         /*
          The persistent container for the application. This implementation
