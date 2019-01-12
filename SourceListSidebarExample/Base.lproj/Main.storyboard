@@ -698,7 +698,7 @@
                                         <action selector="onToolbarAddAction:" target="B8D-0N-5wS" id="AfB-KD-cya"/>
                                     </connections>
                                 </toolbarItem>
-                                <toolbarItem implicitItemIdentifier="8928DB3F-BA10-4B07-9C8C-35C0CBB9F5CF" label="Refresh" paletteLabel="Refresh" tag="-1" image="NSRefreshTemplate" id="PtR-x1-jQA" userLabel="Refresh">
+                                <toolbarItem implicitItemIdentifier="8928DB3F-BA10-4B07-9C8C-35C0CBB9F5CF" label="Refresh" paletteLabel="Refresh" tag="-1" image="NSTouchBarRefreshTemplate" id="PtR-x1-jQA" userLabel="Refresh">
                                     <size key="minSize" width="11" height="15"/>
                                     <size key="maxSize" width="11" height="15"/>
                                     <connections>
@@ -917,8 +917,8 @@ Gw
                                                                 <textField verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dD0-VA-NpB">
                                                                     <rect key="frame" x="6" y="-2" width="143" height="18"/>
                                                                     <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Provider name" id="75n-2p-NCP">
-                                                                        <font key="font" metaFont="cellTitle"/>
-                                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                        <font key="font" metaFont="systemBold" size="12"/>
+                                                                        <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
                                                                 </textField>
@@ -1078,6 +1078,6 @@ Gw
     </scenes>
     <resources>
         <image name="NSAddTemplate" width="11" height="11"/>
-        <image name="NSRefreshTemplate" width="11" height="15"/>
+        <image name="NSTouchBarRefreshTemplate" width="19" height="30"/>
     </resources>
 </document>

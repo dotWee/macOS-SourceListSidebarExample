@@ -32,23 +32,36 @@ class MainSidebarViewController: NSViewController {
         }
         
         // Do view setup here
-        self.accounts = AccountsManager.sharedInstance.accounts.value ?? []
         AccountsManager.sharedInstance.accounts.asObservable()
             .subscribe(onNext: { (accounts) in
                 print("MainSidebarViewController: onNext accounts=\(String(describing: accounts))")
-                if accounts != nil {
-                    self.accounts = accounts!
-                }
-                self.outlineView.reloadData()
-            }).disposed(by: (NSApplication.shared.delegate as! AppDelegate).mainDisposeBag)
+                self.onDataChanged(accounts: accounts)
+            })
+            .disposed(by: (NSApplication.shared.delegate as! AppDelegate).mainDisposeBag)
         
         self.outlineView.delegate = self
         self.outlineView.dataSource = self
+        self.onDataChanged(accounts: accounts)
     }
     
     override func viewDidAppear() {
         self.mainWindowController = self.view.window?.windowController as? MainWindowController
         self.mainWindowController!.mainSidebarViewController = self
+    }
+    
+    private func onDataChanged(accounts: [Account]?) {
+        if accounts != nil {
+            self.accounts = accounts!
+        } else {
+            self.accounts = AccountsManager.sharedInstance.accounts.value ?? []
+        }
+        
+        self.outlineView.reloadData()
+        
+        // Expand all by default
+        for provider in self.providers {
+            self.outlineView.expandItem(provider)
+        }
     }
 }
 
