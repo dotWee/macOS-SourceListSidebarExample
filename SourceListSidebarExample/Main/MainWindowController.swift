@@ -24,6 +24,15 @@ class MainWindowController: NSWindowController {
         }
     }
     
+    @IBAction func onToolbarRefreshAction(_ sender: NSToolbarItem) {
+        if mainSidebarViewController != nil {
+            mainSidebarViewController?.onAccountsChange()
+        } else {
+            print("MainWindowController: onToolbarRefreshAction Error mainSidebarViewController is nil")
+        }
+    }
+    
+    
     override func windowDidLoad() {
         super.windowDidLoad()
     

@@ -21,6 +21,7 @@
 		80D1440B21E921F3007C1662 /* MainSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D1440A21E921F3007C1662 /* MainSplitViewController.swift */; };
 		80D1440E21E93A55007C1662 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D1440D21E93A55007C1662 /* Provider.swift */; };
 		80D1441021E93AB9007C1662 /* ProviderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D1440F21E93AB9007C1662 /* ProviderManager.swift */; };
+		80EA3C3021E9775300A79C83 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 80EA3C2F21E9775300A79C83 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		80D1440A21E921F3007C1662 /* MainSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSplitViewController.swift; sourceTree = "<group>"; };
 		80D1440D21E93A55007C1662 /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
 		80D1440F21E93AB9007C1662 /* ProviderManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderManager.swift; sourceTree = "<group>"; };
+		80EA3C2F21E9775300A79C83 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 				80D143E421E90A29007C1662 /* SourceListSidebarExampleTests */,
 				80D143EF21E90A29007C1662 /* SourceListSidebarExampleUITests */,
 				80D143CD21E90A27007C1662 /* Products */,
+				80EA3C2F21E9775300A79C83 /* README.md */,
 			);
 			sourceTree = "<group>";
 		};
@@ -268,6 +271,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80EA3C3021E9775300A79C83 /* README.md in Resources */,
 				80D143D721E90A28007C1662 /* Assets.xcassets in Resources */,
 				80D143DA21E90A28007C1662 /* Main.storyboard in Resources */,
 			);

@@ -37,19 +37,19 @@ class MainSidebarViewController: NSViewController {
     }
     
     func onAccountsChange() {
+        self.accounts = []
+        self.providers = []
+        
+        for provider in ProviderManager.PROVIDERS_LIST {
+            providers.append(ProviderManager.asInt(provider: provider))
+        }
+        
         if let data = accountManager.getAccounts() {
             self.accounts = data
             
-            for account in accounts {
-                if !providers.contains(Int(account.provider)) {
-                    providers.append(Int(account.provider))
-                }
-            }
-        } else {
-            self.accounts = []
-            self.providers = []
         }
         
+        self.outlineView.reloadData()
     }
 }
 
@@ -93,6 +93,14 @@ extension MainSidebarViewController: NSOutlineViewDataSource {
 }
 
 extension MainSidebarViewController: NSOutlineViewDelegate {
+    
+    func outlineView(_ outlineView: NSOutlineView, shouldShowCellExpansionFor tableColumn: NSTableColumn?, item: Any) -> Bool {
+        return true
+    }
+    
+    func outlineView(_ outlineView: NSOutlineView, shouldShowOutlineCellForItem item: Any) -> Bool {
+        return false
+    }
     
     func outlineView(_ outlineView: NSOutlineView, viewFor tableColumn: NSTableColumn?, item: Any) -> NSView? {
         var view: NSTableCellView?
