@@ -1,0 +1,34 @@
+os: osx
+osx_image: xcode10.1
+language: objective-c
+xcode_workspace: SourceListSidebarExample.xcworkspace
+xcode_scheme: SourceListSidebarExample
+xcode_destination: platform=macOS
+env: EXPANDED_CODE_SIGN_IDENTITY="-"
+before_install:
+- pod update
+- pod install
+script: xcodebuild build -configuration release -workspace SourceListSidebarExample.xcworkspace
+  -scheme SourceListSidebarExample CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
+  -derivedDataPath ./build
+after_success:
+- cd ./build/Build/Products/Release
+- zip -9ry macOS-SourceListSidebarExample-continuous.zip SourceListSidebarExample.app
+- shasum -a 256 macOS-SourceListSidebarExample-continuous.zip > macOS-SourceListSidebarExample-continuous.zip.sha256
+- cd -
+- mv ./build/Build/Products/Release/macOS-SourceListSidebarExample-continuous.zip
+  .
+- mv ./build/Build/Products/Release/macOS-SourceListSidebarExample-continuous.zip.sha256
+  .
+deploy:
+  skip_cleanup: true
+  provider: releases
+  api_key:
+    secure: tHkXcwMcNL/LZxK1EGkEjroi4oc0S5OiOjdO4Ojejm2CRyXbXysIxXZ2rZIaGGEb/udg+J6HhO6jDIi8ycEiMfq8ooGPhUSaiU+voRan+lFNuMc9Mg+9UOZ2eLBKuSXGtdSoPfcsW0RSghLf5mA9rWW8wIvlW93YhXHq79QyycDGyRyAm4gApc33Uuf/1fn7d1batXbQqZL8MqLHPCeoNj8aacgz3Xvfh/5ShChrd0EZ0+jnlH89+3MHQ6e3M2ALqcJnDkvuc3+CCPLhasWoJqvN2EGBW0uiOVxf+2Ah5RfrIT3YnvScYijyOm/3og8JNa787MCMEe986POTDCTWO3vGpfx0JntGT+i+qCNvkPlvPlmx6TuSjl7rNH5ow54HtxvbgYyXxIRhtO6g0mckD21cpcyhTDgHB8CU6d5oy6ln4ID7PmlUi+Z9bYfqmeKtf3ZNaWvomNWQTrDHDzxMICume6gjUXe60nTGYntU3/GTmqb5AQ7fuup8NFOy0KDRhy3mbWXloVrFA9zi5OiHXypFu4U/rauiY96MXLQnpztpXrzXt6F9u1/UeI3TKnp+2sc7U7oEIvDc3uU2hJuonpCll8D5m8bvvVQkzvIBCejm3CRaSneF8uu4/a7rWhfM77RqQEfLLnLP5RGy9lKPdh41rPDqZ6IlC6tkL9qjVis=
+  file: 
+    - macOS-SourceListSidebarExample-continuous.zip
+    - macOS-SourceListSidebarExample-continuous.zip.sha256
+  overwrite: true
+  on:
+    repo: dotWee/macOS-SourceListSidebarExample
+    branch: travis
