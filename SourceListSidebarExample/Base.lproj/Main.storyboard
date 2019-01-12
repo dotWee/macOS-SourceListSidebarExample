@@ -1016,8 +1016,8 @@ Gw
                                     <nil key="backgroundColor"/>
                                 </clipView>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="240" id="BXK-Hn-Opv"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="160" id="LBV-zN-soT"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="160" id="BXK-Hn-Opv"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="LBV-zN-soT"/>
                                 </constraints>
                                 <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="5y3-3c-enr">
                                     <rect key="frame" x="1" y="283" width="158" height="16"/>
@@ -1112,13 +1112,13 @@ Gw
                             <constraint firstItem="3Jv-Wu-u4c" firstAttribute="top" secondItem="Mxc-dy-wA7" secondAttribute="top" constant="20" id="jA4-G6-lTq"/>
                             <constraint firstAttribute="trailing" secondItem="ZUn-aR-aOk" secondAttribute="trailing" constant="20" id="jmS-Db-4dH"/>
                             <constraint firstItem="ZUn-aR-aOk" firstAttribute="top" secondItem="F67-Po-oZJ" secondAttribute="bottom" constant="12" id="l9V-JT-VhZ"/>
-                            <constraint firstItem="ZUn-aR-aOk" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Mxc-dy-wA7" secondAttribute="leading" constant="80" id="o7b-d8-XxF"/>
+                            <constraint firstItem="ZUn-aR-aOk" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Mxc-dy-wA7" secondAttribute="leading" constant="140" id="o7b-d8-XxF"/>
                             <constraint firstAttribute="trailing" secondItem="3E7-Sx-XOC" secondAttribute="trailing" constant="20" id="tPr-qZ-Kf6"/>
                             <constraint firstAttribute="trailing" secondItem="Kxz-qm-Ofq" secondAttribute="trailing" constant="20" id="ycY-UD-RDE"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="boxAccountSettings" destination="F67-Po-oZJ" id="gHs-xb-X3B"/>
+                        <outlet property="boxAccountSettings" destination="F67-Po-oZJ" id="N65-W5-nju"/>
                         <outlet property="buttonDeleteAccount" destination="ZUn-aR-aOk" id="S1R-rt-js1"/>
                         <outlet property="imageView" destination="3Jv-Wu-u4c" id="zUc-j9-IKV"/>
                         <outlet property="onButtonDeleteAccountAction" destination="ZUn-aR-aOk" id="zHI-3D-HQ1"/>

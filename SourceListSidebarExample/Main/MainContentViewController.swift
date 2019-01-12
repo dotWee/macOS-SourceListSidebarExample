@@ -74,7 +74,9 @@ class MainContentViewController: NSViewController {
         imageView.image = nil
         textFieldUsername.stringValue = ""
         textFieldHost.stringValue = ""
-        buttonDeleteAccount.isEnabled = false
+        
+        boxAccountSettings.isHidden = true
+        buttonDeleteAccount.isHidden = true
     }
     
     func fillAccountView(account: Account) {
@@ -87,6 +89,7 @@ class MainContentViewController: NSViewController {
             textFieldHost.stringValue = "\(hostOfAccount.name!) (\(hostOfAccount.url!))"
         }
         
-        buttonDeleteAccount.isEnabled = true
+        boxAccountSettings.isHidden = false
+        buttonDeleteAccount.isHidden = false
     }
 }
