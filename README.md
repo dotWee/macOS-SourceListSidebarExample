@@ -8,11 +8,17 @@ Clone repository:
 
 ```bash
 $ git clone https://github.com/dotWee/macOS-SourceListSidebarExample.git
+$ cd macOS-SourceListSidebarExample
+```
+
+Install dependencies:
+
+```bash
+$ pod install
 ```
 
 Open project with Xcode:
 
 ```bash
-$ cd macOS-SourceListSidebarExample
-$ open SourceListSidebarExample.xcodeproj
+$ open SourceListSidebarExample.xcworkspace
 ```
