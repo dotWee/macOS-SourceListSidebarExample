@@ -19,12 +19,24 @@ class MainWindowController: NSWindowController {
     
     var selectedAccount: Variable<Account?> = Variable(nil)
     
-    @IBAction func onToolbarAddAction(_ sender: NSToolbarItem) {
+    @IBAction func onToolbarAddAccountAction(_ sender: NSToolbarItem) {
+        print("MainWindowController: onToolbarAddAccountAction")
         self.onAddAccount()
     }
     
+    @IBAction func onToolbarAddHostAction(_ sender: NSToolbarItem) {
+        print("MainWindowController: onToolbarAddHostAction")
+        //self.onAddAccount()
+    }
+    
     @IBAction func onToolbarRefreshAction(_ sender: NSToolbarItem) {
+        print("MainWindowController: onToolbarRefreshAction")
         self.onRefreshAccounts()
+    }
+    
+    @IBAction func onToolbarClearAccountsAction(_ sender: NSToolbarItem) {
+        print("MainWindowController: onToolbarClearAccountsAction")
+        AccountsManager.sharedInstance.deleteAll()
     }
     
     override func windowDidLoad() {

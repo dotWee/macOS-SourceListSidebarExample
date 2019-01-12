@@ -678,7 +678,7 @@
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="-36"/>
+            <point key="canvasLocation" x="121" y="-60"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
@@ -691,26 +691,78 @@
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                         <toolbar key="toolbar" implicitIdentifier="14AE006F-B1A8-4869-894E-1386E0C5C9AE" autosavesConfiguration="NO" displayMode="iconAndLabel" sizeMode="regular" id="OOo-br-g7r">
                             <allowedToolbarItems>
-                                <toolbarItem implicitItemIdentifier="677D6040-A947-4079-BCE7-F9DAA4EBED49" label="Add" paletteLabel="Add" tag="-1" image="NSAddTemplate" id="jZy-d3-lQc">
-                                    <size key="minSize" width="11" height="11"/>
-                                    <size key="maxSize" width="11" height="11"/>
+                                <toolbarItem implicitItemIdentifier="98CCEBE9-FC9A-45AC-98D2-E8DDB6BAB25A" label="Add Host" paletteLabel="Add Host" sizingBehavior="auto" id="Kjr-z4-eEw">
+                                    <nil key="toolTip"/>
+                                    <segmentedControl key="view" verticalHuggingPriority="750" id="U4F-BC-uoY">
+                                        <rect key="frame" x="9" y="14" width="38" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <segmentedCell key="cell" borderStyle="border" alignment="left" style="texturedSquare" trackingMode="momentary" id="qMv-15-eaz">
+                                            <font key="font" metaFont="system"/>
+                                            <segments>
+                                                <segment image="NSAddTemplate" width="32"/>
+                                            </segments>
+                                        </segmentedCell>
+                                    </segmentedControl>
                                     <connections>
-                                        <action selector="onToolbarAddAction:" target="B8D-0N-5wS" id="AfB-KD-cya"/>
+                                        <action selector="onToolbarAddHostAction:" target="B8D-0N-5wS" id="oKs-Fh-boZ"/>
                                     </connections>
                                 </toolbarItem>
-                                <toolbarItem implicitItemIdentifier="8928DB3F-BA10-4B07-9C8C-35C0CBB9F5CF" label="Refresh" paletteLabel="Refresh" tag="-1" image="NSTouchBarRefreshTemplate" id="PtR-x1-jQA" userLabel="Refresh">
-                                    <size key="minSize" width="11" height="15"/>
-                                    <size key="maxSize" width="11" height="15"/>
+                                <toolbarItem implicitItemIdentifier="6B98345A-83D2-446B-9EEE-0A124A62540A" label="Add Account" paletteLabel="Add Account" sizingBehavior="auto" id="7hI-gb-bLL">
+                                    <nil key="toolTip"/>
+                                    <segmentedControl key="view" verticalHuggingPriority="750" id="1Ti-1A-b2j">
+                                        <rect key="frame" x="19" y="14" width="38" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <segmentedCell key="cell" borderStyle="border" alignment="left" style="texturedSquare" trackingMode="momentary" id="RPF-mN-uda">
+                                            <font key="font" metaFont="system"/>
+                                            <segments>
+                                                <segment image="NSAddTemplate" width="32"/>
+                                            </segments>
+                                        </segmentedCell>
+                                    </segmentedControl>
                                     <connections>
-                                        <action selector="onToolbarRefreshAction:" target="B8D-0N-5wS" id="T55-Ro-VG5"/>
+                                        <action selector="onToolbarAddAccountAction:" target="B8D-0N-5wS" id="9X7-fk-2dK"/>
                                     </connections>
                                 </toolbarItem>
-                                <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="l47-Hs-UrB"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="sn7-Sf-yyN"/>
+                                <toolbarItem implicitItemIdentifier="D57E3793-4772-419C-B2B1-DABEC6A923D6" label="Reload Data" paletteLabel="Reload Data" image="NSRefreshFreestandingTemplate" sizingBehavior="auto" id="aUe-uV-vme">
+                                    <nil key="toolTip"/>
+                                    <segmentedControl key="view" verticalHuggingPriority="750" id="XBv-Ba-FZa">
+                                        <rect key="frame" x="17" y="14" width="38" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <segmentedCell key="cell" borderStyle="border" alignment="left" style="texturedSquare" trackingMode="momentary" id="oFP-JE-syn">
+                                            <font key="font" metaFont="system"/>
+                                            <segments>
+                                                <segment image="NSRefreshTemplate" width="32"/>
+                                            </segments>
+                                        </segmentedCell>
+                                    </segmentedControl>
+                                    <connections>
+                                        <action selector="onToolbarRefreshAction:" target="B8D-0N-5wS" id="DJT-Fl-tbn"/>
+                                    </connections>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="0D8A3DE5-06F0-47D6-B0A3-6AABFB3F0B9C" label="Clear Accounts" paletteLabel="Clear Accounts" sizingBehavior="auto" id="6CJ-Wa-ca8">
+                                    <nil key="toolTip"/>
+                                    <segmentedControl key="view" verticalHuggingPriority="750" id="2S5-db-0Zo">
+                                        <rect key="frame" x="25" y="14" width="38" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <segmentedCell key="cell" borderStyle="border" alignment="left" style="texturedSquare" trackingMode="momentary" id="12f-KE-Lih">
+                                            <font key="font" metaFont="system"/>
+                                            <segments>
+                                                <segment image="NSRemoveTemplate" width="32"/>
+                                            </segments>
+                                        </segmentedCell>
+                                    </segmentedControl>
+                                    <connections>
+                                        <action selector="onToolbarClearAccountsAction:" target="B8D-0N-5wS" id="1ZK-ZM-NVi"/>
+                                    </connections>
+                                </toolbarItem>
                             </allowedToolbarItems>
                             <defaultToolbarItems>
-                                <toolbarItem reference="jZy-d3-lQc"/>
-                                <toolbarItem reference="l47-Hs-UrB"/>
-                                <toolbarItem reference="PtR-x1-jQA"/>
+                                <toolbarItem reference="7hI-gb-bLL"/>
+                                <toolbarItem reference="Kjr-z4-eEw"/>
+                                <toolbarItem reference="sn7-Sf-yyN"/>
+                                <toolbarItem reference="6CJ-Wa-ca8"/>
+                                <toolbarItem reference="aUe-uV-vme"/>
                             </defaultToolbarItems>
                         </toolbar>
                         <connections>
@@ -1081,7 +1133,9 @@ Gw
     </scenes>
     <resources>
         <image name="NSAddTemplate" width="11" height="11"/>
-        <image name="NSTouchBarRefreshTemplate" width="19" height="30"/>
+        <image name="NSRefreshFreestandingTemplate" width="14" height="14"/>
+        <image name="NSRefreshTemplate" width="11" height="15"/>
+        <image name="NSRemoveTemplate" width="11" height="11"/>
         <image name="NSUserAccounts" width="32" height="32"/>
     </resources>
 </document>
