@@ -17,26 +17,25 @@ class MainWindowController: NSWindowController {
     var mainContentViewController: MainContentViewController? = nil
     
     @IBAction func onToolbarAddAction(_ sender: NSToolbarItem) {
-        if mainSplitViewController != nil {
-            mainSplitViewController?.onShowNewAccountSheet()
-        } else {
-            print("MainWindowController: Error mainViewController is nil")
-        }
+        self.onAddAccount()
     }
     
     @IBAction func onToolbarRefreshAction(_ sender: NSToolbarItem) {
-        if mainSidebarViewController != nil {
-            mainSidebarViewController?.onAccountsChange()
-        } else {
-            print("MainWindowController: onToolbarRefreshAction Error mainSidebarViewController is nil")
-        }
+        self.onRefreshAccounts()
     }
-    
     
     override func windowDidLoad() {
         super.windowDidLoad()
     
         // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
+    }
+    
+    func onAddAccount() {
+        if mainSplitViewController != nil {
+            mainSplitViewController?.onShowNewAccountSheet()
+        } else {
+            print("MainWindowController: Error mainViewController is nil")
+        }
     }
     
     func onAccountSelected(account: Account) {
@@ -51,6 +50,7 @@ class MainWindowController: NSWindowController {
     func onRefreshAccounts() {
         print("MainWindowController: onRefreshAccounts")
         if mainSidebarViewController != nil {
+            mainContentViewController?.setAccount(account: nil)
             mainSidebarViewController?.onAccountsChange()
         } else {
             print("MainWindowController: onRefreshAccounts mainSidebarViewController is nil!")

@@ -10,7 +10,7 @@ import Cocoa
 
 class MainSplitViewController: NSSplitViewController {
     
-    let newAccountViewController = NSStoryboard.init(name: "Main", bundle: nil).instantiateController(withIdentifier: "NewAccountViewController") as! NewAccountViewController
+    let addAccountViewController = NSStoryboard.init(name: "Main", bundle: nil).instantiateController(withIdentifier: "AddAccountViewController") as! AddAccountViewController
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +23,6 @@ class MainSplitViewController: NSSplitViewController {
     }
     
     func onShowNewAccountSheet() {
-        self.presentAsSheet(newAccountViewController)
+        self.presentAsSheet(addAccountViewController)
     }
 }

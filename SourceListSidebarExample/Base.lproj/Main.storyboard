@@ -728,7 +728,7 @@
         <!--New account-->
         <scene sceneID="QPz-mF-kQl">
             <objects>
-                <viewController title="New account" storyboardIdentifier="NewAccountViewController" id="dOY-L3-KLZ" customClass="NewAccountViewController" customModule="SourceListSidebarExample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="New account" storyboardIdentifier="AddAccountViewController" id="dOY-L3-KLZ" customClass="AddAccountViewController" customModule="SourceListSidebarExample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="d8q-St-dH6">
                         <rect key="frame" x="0.0" y="0.0" width="308" height="191"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -849,7 +849,7 @@ Gw
                 </viewController>
                 <customObject id="plu-1s-rXY" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="590" y="285"/>
+            <point key="canvasLocation" x="576" y="598.5"/>
         </scene>
         <!--Main Split View Controller-->
         <scene sceneID="KPe-92-u2E">
@@ -891,13 +891,13 @@ Gw
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" outlineTableColumn="Ol7-EM-FEA" id="pmy-Fa-Eaf">
-                                            <rect key="frame" x="0.0" y="0.0" width="159" height="298"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="158" height="298"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="4" height="6"/>
                                             <color key="backgroundColor" name="_sourceListBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                             <tableColumns>
-                                                <tableColumn width="155" minWidth="16" maxWidth="1000" id="Ol7-EM-FEA">
+                                                <tableColumn width="154" minWidth="16" maxWidth="1000" id="Ol7-EM-FEA">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
                                                         <font key="font" metaFont="smallSystem"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -911,13 +911,13 @@ Gw
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView identifier="HeaderCell" id="0f1-C3-Qka">
-                                                            <rect key="frame" x="2" y="3" width="155" height="16"/>
+                                                            <rect key="frame" x="2" y="3" width="154" height="16"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dD0-VA-NpB">
                                                                     <rect key="frame" x="6" y="-2" width="143" height="18"/>
                                                                     <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Provider name" id="75n-2p-NCP">
-                                                                        <font key="font" metaFont="system" size="12"/>
+                                                                        <font key="font" metaFont="cellTitle"/>
                                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
@@ -933,8 +933,8 @@ Gw
                                                                 <outlet property="textField" destination="dD0-VA-NpB" id="Lhj-iA-jg0"/>
                                                             </connections>
                                                         </tableCellView>
-                                                        <tableCellView identifier="DataCell" id="X0y-aj-VRl">
-                                                            <rect key="frame" x="2" y="25" width="156" height="17"/>
+                                                        <tableCellView identifier="DataCell" misplaced="YES" id="X0y-aj-VRl">
+                                                            <rect key="frame" x="2" y="25" width="154" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="I5m-wV-gTI">
@@ -967,7 +967,7 @@ Gw
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="240" id="BXK-Hn-Opv"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="160" id="LBV-zN-soT"/>
                                 </constraints>
-                                <scroller key="horizontalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="5y3-3c-enr">
+                                <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="5y3-3c-enr">
                                     <rect key="frame" x="1" y="283" width="158" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>

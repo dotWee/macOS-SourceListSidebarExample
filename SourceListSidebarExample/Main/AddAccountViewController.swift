@@ -1,5 +1,5 @@
 //
-//  NewAccountViewController.swift
+//  AddAccountViewController.swift
 //  SourceListSidebarExample
 //
 //  Created by Lukas Wolfsteiner on 11.01.19.
@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class NewAccountViewController: NSViewController {
+class AddAccountViewController: NSViewController {
 
     @IBOutlet weak var textFieldUsername: NSTextField!
     
@@ -25,7 +25,7 @@ class NewAccountViewController: NSViewController {
         let username = textFieldUsername.stringValue
         let provider = ProviderManager.PROVIDERS_LIST[popUpButtonProvider.indexOfSelectedItem]
         
-        if !username.isEmpty && provider != nil {
+        if !username.isEmpty {
             let account = accountsManager.addAccount(username: username, provider: provider)
             
             print("NewAccountViewController: Created account=\(account) with values username=\(username) provider=\(provider)")

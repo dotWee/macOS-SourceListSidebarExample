@@ -17,7 +17,7 @@
 		80D1440121E90AD0007C1662 /* MainSidebarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D1440021E90AD0007C1662 /* MainSidebarViewController.swift */; };
 		80D1440321E90AFA007C1662 /* MainContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D1440221E90AFA007C1662 /* MainContentViewController.swift */; };
 		80D1440521E90BD7007C1662 /* AccountsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D1440421E90BD7007C1662 /* AccountsManager.swift */; };
-		80D1440721E9182F007C1662 /* NewAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D1440621E9182F007C1662 /* NewAccountViewController.swift */; };
+		80D1440721E9182F007C1662 /* AddAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D1440621E9182F007C1662 /* AddAccountViewController.swift */; };
 		80D1440B21E921F3007C1662 /* MainSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D1440A21E921F3007C1662 /* MainSplitViewController.swift */; };
 		80D1440E21E93A55007C1662 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D1440D21E93A55007C1662 /* Provider.swift */; };
 		80D1441021E93AB9007C1662 /* ProviderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D1440F21E93AB9007C1662 /* ProviderManager.swift */; };
@@ -59,7 +59,7 @@
 		80D1440021E90AD0007C1662 /* MainSidebarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSidebarViewController.swift; sourceTree = "<group>"; };
 		80D1440221E90AFA007C1662 /* MainContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContentViewController.swift; sourceTree = "<group>"; };
 		80D1440421E90BD7007C1662 /* AccountsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsManager.swift; sourceTree = "<group>"; };
-		80D1440621E9182F007C1662 /* NewAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAccountViewController.swift; sourceTree = "<group>"; };
+		80D1440621E9182F007C1662 /* AddAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountViewController.swift; sourceTree = "<group>"; };
 		80D1440A21E921F3007C1662 /* MainSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSplitViewController.swift; sourceTree = "<group>"; };
 		80D1440D21E93A55007C1662 /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
 		80D1440F21E93AB9007C1662 /* ProviderManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderManager.swift; sourceTree = "<group>"; };
@@ -162,7 +162,7 @@
 				80D1440A21E921F3007C1662 /* MainSplitViewController.swift */,
 				80D1440021E90AD0007C1662 /* MainSidebarViewController.swift */,
 				80D1440221E90AFA007C1662 /* MainContentViewController.swift */,
-				80D1440621E9182F007C1662 /* NewAccountViewController.swift */,
+				80D1440621E9182F007C1662 /* AddAccountViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -307,7 +307,7 @@
 				80D1441021E93AB9007C1662 /* ProviderManager.swift in Sources */,
 				80D1440B21E921F3007C1662 /* MainSplitViewController.swift in Sources */,
 				80D143D021E90A27007C1662 /* AppDelegate.swift in Sources */,
-				80D1440721E9182F007C1662 /* NewAccountViewController.swift in Sources */,
+				80D1440721E9182F007C1662 /* AddAccountViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

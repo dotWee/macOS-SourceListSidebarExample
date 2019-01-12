@@ -22,8 +22,9 @@ class MainContentViewController: NSViewController {
     
     @IBAction func onButtonDeleteAccountAction(_ sender: NSButton) {
         if self.mainWindowController != nil {
-            self.mainWindowController?.accountManager.deleteAccount(accountId: (account?.accountId)!)
+            self.mainWindowController?.accountManager.deleteAccount(account: account!)
             self.mainWindowController?.onRefreshAccounts()
+            self.setAccount(account: nil)
         }
     }
     
@@ -42,19 +43,29 @@ class MainContentViewController: NSViewController {
         self.mainWindowController!.mainContentViewController = self
     }
     
+    func clearAccountView() {
+        imageView.image = nil
+        textFieldUsername.stringValue = ""
+        textFieldProvider.stringValue = ""
+        buttonDeleteAccount.isEnabled = false
+    }
+    
+    func fillAccountView(account: Account) {
+        imageView.image = NSImage.init(imageLiteralResourceName: "NSUserAccounts")
+        textFieldUsername.stringValue = account.username!
+        textFieldProvider.stringValue = ProviderManager.asStringFromInt(provider: Int(account.provider))!
+        buttonDeleteAccount.isEnabled = true
+    }
+    
     func setAccount(account: Account?) {
+        print("MainContentViewController: setAccount=\(account)")
+        
         if (account == nil) {
-            imageView.image = nil
-            textFieldUsername.stringValue = ""
-            textFieldProvider.stringValue = ""
-            buttonDeleteAccount.isEnabled = false
-        } else {
-            self.account = account
-            
-            imageView.image = NSImage.init(imageLiteralResourceName: "NSUserAccounts")
-            textFieldUsername.stringValue = account!.username!
-            textFieldProvider.stringValue = ProviderManager.asStringFromInt(provider: Int(account!.provider))!
-            buttonDeleteAccount.isEnabled = true
+            self.clearAccountView()
+            return
         }
+        
+        self.account = account!
+        self.fillAccountView(account: account!)
     }
 }

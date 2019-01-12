@@ -10,9 +10,6 @@ import Cocoa
 
 class AccountsManager: NSObject {
     let accountEntityName = "Account"
-    let accountValueKeyAccountId = "accountId"
-    let accountValueKeyUsername = "username"
-    let accountValueKeyProvider = "provider"
     
     let context: NSManagedObjectContext
     
@@ -21,57 +18,42 @@ class AccountsManager: NSObject {
         self.context = appDelegate.persistentContainer.viewContext
     }
     
-    func addAccount(username: String, provider: Provider) -> String? {
+    func addAccount(username: String, provider: Provider) -> Account? {
         guard let newEntity = NSEntityDescription.entity(forEntityName: accountEntityName, in: context) else {
             return nil
         }
         
-        let newAccount = NSManagedObject(entity: newEntity, insertInto: context)
+        let newAccount = Account.init(entity: newEntity, insertInto: context)
+        let newAccountId = UUID().uuidString
         
-        let accountId = UUID().uuidString
-        newAccount.setValue(accountId, forKey: accountValueKeyAccountId)
-        newAccount.setValue(username, forKey: accountValueKeyUsername)
-        newAccount.setValue(ProviderManager.asInt(provider: provider), forKey: accountValueKeyProvider)
+        newAccount.accountId = newAccountId
+        newAccount.username = username
+        newAccount.provider = Int64(ProviderManager.asInt(provider: provider))
 
         do {
             try context.save()
-            return accountId
+            return newAccount
         } catch {
             print(error)
             return nil
         }
     }
     
-    func deleteAccount(accountId: String) -> Bool? {
-        guard let appDelegate = NSApplication.shared.delegate as? AppDelegate else {
-            return nil
-        }
+    func deleteAccount(account: Account) {
+        context.delete(account)
         
-        let context = appDelegate.persistentContainer.viewContext
-        if let accounts = getAccounts() {
-            
-            for account in accounts {
-                if account.value(forKey: accountValueKeyAccountId) as! String == accountId {
-                    
-                    // account to delete
-                    context.delete(account)
-                    return true
-                }
-            }
+        do {
+            try context.save()
+        } catch {
+            print(error)
         }
-        
-        return nil
     }
     
-    func deleteAll() -> Bool? {
+    func deleteAll() {
         if let accounts = getAccounts() {
             for account in accounts {
-                context.delete(account)
+                self.deleteAccount(account: account)
             }
-            
-            return true
-        } else {
-            return nil
         }
     }
     
