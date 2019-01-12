@@ -861,7 +861,7 @@ Gw
                     </splitViewItems>
                     <splitView key="splitView" dividerStyle="thin" vertical="YES" id="jrA-kQ-0ej">
                         <rect key="frame" x="0.0" y="0.0" width="543" height="300"/>
-                        <autoresizingMask key="autoresizingMask"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <connections>
                             <outlet property="delegate" destination="0U7-ep-XJi" id="bxY-Rd-cw1"/>
                         </connections>
@@ -882,7 +882,7 @@ Gw
                 <viewController id="cw9-1B-XgL" customClass="MainSidebarViewController" customModule="SourceListSidebarExample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="aHp-yv-DSe">
                         <rect key="frame" x="0.0" y="0.0" width="160" height="300"/>
-                        <autoresizingMask key="autoresizingMask"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView autohidesScrollers="YES" horizontalLineScroll="23" horizontalPageScroll="10" verticalLineScroll="23" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CXU-Dl-Yex">
                                 <rect key="frame" x="0.0" y="0.0" width="160" height="300"/>
@@ -916,7 +916,7 @@ Gw
                                                             <subviews>
                                                                 <textField verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dD0-VA-NpB">
                                                                     <rect key="frame" x="6" y="-2" width="143" height="18"/>
-                                                                    <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Provider name" id="75n-2p-NCP">
+                                                                    <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Provider" id="75n-2p-NCP">
                                                                         <font key="font" metaFont="systemBold" size="12"/>
                                                                         <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -933,13 +933,13 @@ Gw
                                                                 <outlet property="textField" destination="dD0-VA-NpB" id="Lhj-iA-jg0"/>
                                                             </connections>
                                                         </tableCellView>
-                                                        <tableCellView identifier="DataCell" misplaced="YES" id="X0y-aj-VRl">
+                                                        <tableCellView identifier="DataCell" id="X0y-aj-VRl">
                                                             <rect key="frame" x="2" y="25" width="154" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="I5m-wV-gTI">
-                                                                    <rect key="frame" x="20" y="0.0" width="118" height="17"/>
-                                                                    <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Account username" id="myU-A6-Zak">
+                                                                    <rect key="frame" x="20" y="0.0" width="116" height="17"/>
+                                                                    <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Username" id="myU-A6-Zak">
                                                                         <font key="font" metaFont="system"/>
                                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -1000,7 +1000,7 @@ Gw
                 <viewController id="twQ-zT-JFR" customClass="MainContentViewController" customModule="SourceListSidebarExample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="Mxc-dy-wA7">
                         <rect key="frame" x="0.0" y="0.0" width="350" height="300"/>
-                        <autoresizingMask key="autoresizingMask"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3Jv-Wu-u4c">
                                 <rect key="frame" x="20" y="232" width="48" height="48"/>
@@ -1008,11 +1008,11 @@ Gw
                                     <constraint firstAttribute="width" constant="48" id="Jx4-jD-sIo"/>
                                     <constraint firstAttribute="height" constant="48" id="cAu-bY-tmY"/>
                                 </constraints>
-                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="CNu-6I-swM"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSUserAccounts" id="CNu-6I-swM"/>
                             </imageView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Kxz-qm-Ofq">
                                 <rect key="frame" x="76" y="258" width="256" height="22"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" id="44j-7K-zIp">
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Username" id="44j-7K-zIp">
                                     <font key="font" metaFont="systemMedium" size="18"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -1020,7 +1020,7 @@ Gw
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3E7-Sx-XOC">
                                 <rect key="frame" x="78" y="239" width="254" height="17"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" id="ibg-ps-WFa">
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Provider" id="ibg-ps-WFa">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -1032,6 +1032,9 @@ Gw
                                     <rect key="frame" x="3" y="3" width="310" height="157"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 </view>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="120" id="a44-gJ-Ah1"/>
+                                </constraints>
                             </box>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ZUn-aR-aOk">
                                 <rect key="frame" x="247" y="13" width="89" height="32"/>
@@ -1079,5 +1082,6 @@ Gw
     <resources>
         <image name="NSAddTemplate" width="11" height="11"/>
         <image name="NSTouchBarRefreshTemplate" width="19" height="30"/>
+        <image name="NSUserAccounts" width="32" height="32"/>
     </resources>
 </document>
