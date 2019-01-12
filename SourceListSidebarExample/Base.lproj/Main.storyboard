@@ -800,7 +800,6 @@
                                         <constraint firstAttribute="trailing" secondItem="CYR-jB-XdR" secondAttribute="trailing" constant="20" id="pky-Ad-l8S"/>
                                     </constraints>
                                 </view>
-                                <font key="titleFont" metaFont="smallSystem"/>
                             </box>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="nKD-wp-jjY">
                                 <rect key="frame" x="235" y="5" width="59" height="32"/>
@@ -843,6 +842,7 @@ Gw
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="buttonOk" destination="nKD-wp-jjY" id="wRQ-xd-PqX"/>
                         <outlet property="popUpButtonProvider" destination="Kkv-S7-CSd" id="nNq-XS-dii"/>
                         <outlet property="textFieldUsername" destination="C8D-bl-suG" id="hEp-WK-qpO"/>
                     </connections>
@@ -1032,7 +1032,6 @@ Gw
                                     <rect key="frame" x="3" y="3" width="310" height="157"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 </view>
-                                <font key="titleFont" metaFont="smallSystem"/>
                             </box>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ZUn-aR-aOk">
                                 <rect key="frame" x="203" y="13" width="133" height="32"/>
