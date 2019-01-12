@@ -6,7 +6,10 @@
 //  Copyright © 2019 Lukas Wolfsteiner. All rights reserved.
 //
 
+import RxSwift
+import RxCocoa
 import Cocoa
+import AppKit
 
 class MainSplitViewController: NSSplitViewController {
     

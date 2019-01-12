@@ -6,7 +6,10 @@
 //  Copyright © 2019 Lukas Wolfsteiner. All rights reserved.
 //
 
+import RxSwift
+import RxCocoa
 import Cocoa
+import AppKit
 
 class MainWindowController: NSWindowController {
     
@@ -15,6 +18,8 @@ class MainWindowController: NSWindowController {
     var mainSplitViewController: MainSplitViewController? = nil
     var mainSidebarViewController: MainSidebarViewController? = nil
     var mainContentViewController: MainContentViewController? = nil
+    
+    var selectedAccount: Variable<Account?> = Variable(nil)
     
     @IBAction func onToolbarAddAction(_ sender: NSToolbarItem) {
         self.onAddAccount()
@@ -38,19 +43,10 @@ class MainWindowController: NSWindowController {
         }
     }
     
-    func onAccountSelected(account: Account) {
-        print("MainWindowController: onAccountSelected account=\(account)")
-        if mainContentViewController != nil {
-            mainContentViewController?.setAccount(account: account)
-        } else {
-            print("MainWindowController: onAccountSelected mainContentViewController is nil!")
-        }
-    }
-    
     func onRefreshAccounts() {
         print("MainWindowController: onRefreshAccounts")
         if mainSidebarViewController != nil {
-            mainContentViewController?.setAccount(account: nil)
+            mainContentViewController?.clearAccountView()
             mainSidebarViewController?.onAccountsChange()
         } else {
             print("MainWindowController: onRefreshAccounts mainSidebarViewController is nil!")

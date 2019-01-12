@@ -6,7 +6,10 @@
 //  Copyright © 2019 Lukas Wolfsteiner. All rights reserved.
 //
 
+import RxSwift
+import RxCocoa
 import Cocoa
+import AppKit
 
 class MainSidebarViewController: NSViewController {
 
@@ -133,11 +136,12 @@ extension MainSidebarViewController: NSOutlineViewDelegate {
         }
         
         let selectedIndex = outlineView.selectedRow
-        //print("MainSidebarViewController: outlineViewSelectionDidChange selectedIndex=\(selectedIndex)")
-        
         if let account = outlineView.item(atRow: selectedIndex) as? Account {
-            //print("MainSidebarViewController: outlineViewSelectionDidChange account=\(account)")
-            self.mainWindowController?.onAccountSelected(account: account)
+            if self.mainWindowController != nil {
+                self.mainWindowController!.selectedAccount.value = account
+            } else {
+                print("MainSidebarViewController: Error, couldn't send changed selectedAccount")
+            }
         }
     }
 }

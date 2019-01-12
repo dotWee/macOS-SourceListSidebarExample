@@ -6,7 +6,10 @@
 //  Copyright © 2019 Lukas Wolfsteiner. All rights reserved.
 //
 
+import RxSwift
+import RxCocoa
 import Cocoa
+import AppKit
 
 class MainContentViewController: NSViewController {
 
@@ -24,7 +27,7 @@ class MainContentViewController: NSViewController {
         if self.mainWindowController != nil {
             self.mainWindowController?.accountManager.deleteAccount(account: account!)
             self.mainWindowController?.onRefreshAccounts()
-            self.setAccount(account: nil)
+            self.clearAccountView()
         }
     }
     
@@ -35,12 +38,27 @@ class MainContentViewController: NSViewController {
         super.viewDidLoad()
         
         // Do view setup here.
-        setAccount(account: nil)
+        self.clearAccountView()
     }
     
     override func viewDidAppear() {
         self.mainWindowController = self.view.window?.windowController as! MainWindowController
         self.mainWindowController!.mainContentViewController = self
+        
+        if self.mainWindowController != nil {
+            self.mainWindowController!.selectedAccount.asObservable().subscribe(onNext: { (account) in
+                print("MainContentViewController: onNext account=\(account)")
+                
+                self.account = account
+                if account != nil {
+                    self.fillAccountView(account: account!)
+                } else {
+                    self.clearAccountView()
+                }
+            })
+        } else {
+            print("MainContentViewController: Error, can't bind selectedAccount")
+        }
     }
     
     func clearAccountView() {
@@ -55,17 +73,5 @@ class MainContentViewController: NSViewController {
         textFieldUsername.stringValue = account.username!
         textFieldProvider.stringValue = ProviderManager.asStringFromInt(provider: Int(account.provider))!
         buttonDeleteAccount.isEnabled = true
-    }
-    
-    func setAccount(account: Account?) {
-        print("MainContentViewController: setAccount=\(account)")
-        
-        if (account == nil) {
-            self.clearAccountView()
-            return
-        }
-        
-        self.account = account!
-        self.fillAccountView(account: account!)
     }
 }

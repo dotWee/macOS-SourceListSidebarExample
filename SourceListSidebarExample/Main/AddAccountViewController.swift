@@ -19,6 +19,7 @@ class AddAccountViewController: NSViewController {
     
     @IBOutlet weak var popUpButtonProvider: NSPopUpButton!
     
+    let disposeBag = DisposeBag.init()
     let accountsManager = AccountsManager.init()
     
     let items: [String] = [
@@ -32,7 +33,7 @@ class AddAccountViewController: NSViewController {
         
         let account = accountsManager.addAccount(username: username, provider: provider)
         
-        print("NewAccountViewController: Created account=\(account) with values username=\(username) provider=\(provider)")
+        print("NewAccountViewController: Created account=\(String(describing: account)) with values username=\(username) provider=\(provider)")
         self.dismiss(self)
     }
     
@@ -52,7 +53,7 @@ class AddAccountViewController: NSViewController {
                 print("onNext: \(String(describing: usernameValue))")
                 
                 self.buttonOk.isEnabled = usernameValue != nil && !(usernameValue?.isEmpty)!
-            })
+            }).disposed(by: disposeBag)
     }
     
 }
