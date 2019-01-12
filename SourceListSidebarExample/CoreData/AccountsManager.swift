@@ -12,12 +12,14 @@ import Cocoa
 import AppKit
 
 class AccountsManager {
+    static let sharedInstance = AccountsManager()
+    
     let accountEntityName = "Account"
-    
-    let accounts: Variable<[Account]?> = Variable([])
     let context: NSManagedObjectContext
+    let accounts: Variable<[Account]?> = Variable([])
     
-    init(appDelegate: AppDelegate) {
+    init() {
+        let appDelegate = NSApplication.shared.delegate as! AppDelegate
         self.context = appDelegate.persistentContainer.viewContext
         self.accounts.value = self.getAccounts()
     }

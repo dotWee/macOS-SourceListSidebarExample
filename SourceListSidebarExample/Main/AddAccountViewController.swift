@@ -29,9 +29,7 @@ class AddAccountViewController: NSViewController {
     @IBAction func onButtonSaveAction(_ sender: NSButton) {
         let username = textFieldUsername.stringValue
         let provider = ProviderManager.PROVIDERS_LIST[popUpButtonProvider.indexOfSelectedItem]
-        
-        let appDelegate = NSApplication.shared.delegate as! AppDelegate
-        let account = appDelegate.accountsManager.addAccount(username: username, provider: provider)
+        let account = AccountsManager.sharedInstance.addAccount(username: username, provider: provider)
         
         print("AddAccountViewController: Created account=\(String(describing: account)) with values username=\(username) provider=\(provider)")
         self.dismiss(self)
@@ -53,7 +51,6 @@ class AddAccountViewController: NSViewController {
             .distinctUntilChanged()
             .subscribe(onNext: { (usernameValue) in
                 print("AddAccountViewController: onNext username=\(String(describing: usernameValue))")
-                
                 self.buttonOk.isEnabled = usernameValue != nil && !(usernameValue?.isEmpty)!
             }).disposed(by: appDelegate.mainDisposeBag)
     }

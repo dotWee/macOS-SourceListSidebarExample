@@ -31,17 +31,16 @@ class MainSidebarViewController: NSViewController {
             providers.append(ProviderManager.asInt(provider: provider))
         }
         
-        // Do view setup here.
-        let appDelegate = NSApplication.shared.delegate as! AppDelegate
-        self.accounts = appDelegate.accountsManager.accounts.value ?? []
-        appDelegate.accountsManager.accounts.asObservable()
+        // Do view setup here
+        self.accounts = AccountsManager.sharedInstance.accounts.value ?? []
+        AccountsManager.sharedInstance.accounts.asObservable()
             .subscribe(onNext: { (accounts) in
                 print("MainSidebarViewController: onNext accounts=\(String(describing: accounts))")
                 if accounts != nil {
                     self.accounts = accounts!
                 }
                 self.outlineView.reloadData()
-            }).disposed(by: appDelegate.mainDisposeBag)
+            }).disposed(by: (NSApplication.shared.delegate as! AppDelegate).mainDisposeBag)
         
         self.outlineView.delegate = self
         self.outlineView.dataSource = self

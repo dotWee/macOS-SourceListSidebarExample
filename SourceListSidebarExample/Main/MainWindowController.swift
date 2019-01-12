@@ -43,8 +43,7 @@ class MainWindowController: NSWindowController {
     
     func onRefreshAccounts() {
         print("MainWindowController: onRefreshAccounts")
-        let appDelegate = NSApplication.shared.delegate as! AppDelegate
-        appDelegate.accountsManager.getAccounts()
+        AccountsManager.sharedInstance.getAccounts()
     }
 
     func dialogOkCancel(question: String, text: String) -> Bool {

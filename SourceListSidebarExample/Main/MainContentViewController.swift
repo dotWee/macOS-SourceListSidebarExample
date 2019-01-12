@@ -23,11 +23,10 @@ class MainContentViewController: NSViewController {
     
     @IBOutlet weak var buttonDeleteAccount: NSButton!
     
-    @IBAction func onButtonDeleteAccountAction(_ sender: NSButton) {
+    @IBAction func onButtonRemoveAccountAction(_ sender: NSButton) {
         if self.mainWindowController != nil {
+            AccountsManager.sharedInstance.deleteAccount(account: account!)
             
-            let appDelegate = NSApplication.shared.delegate as! AppDelegate
-            appDelegate.accountsManager.deleteAccount(account: account!)
             self.mainWindowController?.onRefreshAccounts()
             self.clearAccountView()
         }
@@ -66,7 +65,7 @@ class MainContentViewController: NSViewController {
         }
         
         // Clear account view when data is changed
-        appDelegate.accountsManager.accounts.asObservable().subscribe(onNext: { (accounts) in
+        AccountsManager.sharedInstance.accounts.asObservable().subscribe(onNext: { (accounts) in
             self.clearAccountView()
         }).disposed(by: appDelegate.mainDisposeBag)
     }

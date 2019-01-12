@@ -21,7 +21,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     var mainDisposeBag: DisposeBag = DisposeBag.init()
-    lazy var accountsManager: AccountsManager = AccountsManager.init(appDelegate: self)
     
     // MARK: - Core Data stack
     lazy var persistentContainer: NSPersistentContainer = {

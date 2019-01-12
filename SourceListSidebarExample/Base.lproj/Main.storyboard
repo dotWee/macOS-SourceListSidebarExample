@@ -733,7 +733,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="308" height="191"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <box title="New account details" translatesAutoresizingMaskIntoConstraints="NO" id="xcT-A0-DMV">
+                            <box title="New Account Details" translatesAutoresizingMaskIntoConstraints="NO" id="xcT-A0-DMV">
                                 <rect key="frame" x="17" y="37" width="274" height="134"/>
                                 <view key="contentView" id="kaf-Tc-7kH">
                                     <rect key="frame" x="3" y="3" width="268" height="116"/>
@@ -992,7 +992,7 @@ Gw
                 </viewController>
                 <customObject id="cxd-VU-ZlB" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-63" y="1087"/>
+            <point key="canvasLocation" x="-70" y="1087"/>
         </scene>
         <!--Main Content View Controller-->
         <scene sceneID="pfG-Cm-jqq">
@@ -1034,13 +1034,13 @@ Gw
                                 </view>
                             </box>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ZUn-aR-aOk">
-                                <rect key="frame" x="203" y="13" width="133" height="32"/>
-                                <buttonCell key="cell" type="push" title="Delete Account" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ZQQ-ax-tI5">
+                                <rect key="frame" x="247" y="13" width="89" height="32"/>
+                                <buttonCell key="cell" type="push" title="Remove" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ZQQ-ax-tI5">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="onButtonDeleteAccountAction:" target="twQ-zT-JFR" id="rJq-JF-W5B"/>
+                                    <action selector="onButtonRemoveAccountAction:" target="twQ-zT-JFR" id="rJq-JF-W5B"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1057,6 +1057,7 @@ Gw
                             <constraint firstItem="3Jv-Wu-u4c" firstAttribute="top" secondItem="Mxc-dy-wA7" secondAttribute="top" constant="20" id="jA4-G6-lTq"/>
                             <constraint firstAttribute="trailing" secondItem="ZUn-aR-aOk" secondAttribute="trailing" constant="20" id="jmS-Db-4dH"/>
                             <constraint firstItem="ZUn-aR-aOk" firstAttribute="top" secondItem="F67-Po-oZJ" secondAttribute="bottom" constant="12" id="l9V-JT-VhZ"/>
+                            <constraint firstItem="ZUn-aR-aOk" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Mxc-dy-wA7" secondAttribute="leading" constant="80" id="o7b-d8-XxF"/>
                             <constraint firstAttribute="trailing" secondItem="3E7-Sx-XOC" secondAttribute="trailing" constant="20" id="tPr-qZ-Kf6"/>
                             <constraint firstAttribute="trailing" secondItem="Kxz-qm-Ofq" secondAttribute="trailing" constant="20" id="ycY-UD-RDE"/>
                         </constraints>
@@ -1072,7 +1073,7 @@ Gw
                 </viewController>
                 <customObject id="ZYk-83-UHQ" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="221" y="1087"/>
+            <point key="canvasLocation" x="218" y="1087"/>
         </scene>
     </scenes>
     <resources>
