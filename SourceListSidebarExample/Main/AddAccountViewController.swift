@@ -21,17 +21,15 @@ class AddAccountViewController: NSViewController {
     
     let disposeBag = DisposeBag.init()
     
-    let items: [String] = [
-        ProviderManager.asString(provider: Provider.Facebook)!,
-        ProviderManager.asString(provider: Provider.Twitter)!
-    ]
+    var names: [String] = []
+    var hosts: [Host] = []
     
     @IBAction func onButtonSaveAction(_ sender: NSButton) {
         let username = textFieldUsername.stringValue
-        let provider = ProviderManager.PROVIDERS_LIST[popUpButtonProvider.indexOfSelectedItem]
-        let account = AccountsManager.sharedInstance.addAccount(username: username, provider: provider)
+        let hostId = hosts[self.popUpButtonProvider.indexOfSelectedItem].hostId
+        let account = AccountsManager.sharedInstance.addAccount(username: username, hostId: hostId!)
         
-        print("AddAccountViewController: Created account=\(String(describing: account)) with values username=\(username) provider=\(provider)")
+        print("AddAccountViewController: Created account=\(String(describing: account)) with values username=\(username) hostId=\(hostId)")
         self.dismiss(self)
     }
     
@@ -43,7 +41,14 @@ class AddAccountViewController: NSViewController {
         super.viewDidLoad()
         
         // Do view setup here.
-        self.popUpButtonProvider.addItems(withTitles: self.items)
+        if let hosts = HostsManager.sharedInstance.getHosts() {
+            for host in hosts {
+                self.names.append(host.name!)
+                self.hosts.append(host)
+                
+                self.popUpButtonProvider.addItem(withTitle: host.name!)
+            }
+        }
         
         let appDelegate = NSApplication.shared.delegate as! AppDelegate
         self.textFieldUsername

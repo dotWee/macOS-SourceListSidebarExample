@@ -24,7 +24,7 @@ class AccountsManager {
         self.accounts.value = self.getAccounts()
     }
     
-    func addAccount(username: String, provider: Provider) -> Account? {
+    func addAccount(username: String, hostId: String) -> Account? {
         guard let newEntity = NSEntityDescription.entity(forEntityName: accountEntityName, in: context) else {
             return nil
         }
@@ -34,7 +34,7 @@ class AccountsManager {
         
         newAccount.accountId = newAccountId
         newAccount.username = username
-        newAccount.provider = Int64(ProviderManager.asInt(provider: provider))
+        newAccount.hostId = hostId
 
         do {
             try context.save()

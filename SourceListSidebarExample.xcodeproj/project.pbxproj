@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		76C425153C28326313EC431C /* Pods_SourceListSidebarExampleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE2ED5B02B20405A3BD9B92A /* Pods_SourceListSidebarExampleUITests.framework */; };
+		8015A2E721EA08F800273942 /* HostsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8015A2E621EA08F800273942 /* HostsManager.swift */; };
 		80D143D021E90A27007C1662 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D143CF21E90A27007C1662 /* AppDelegate.swift */; };
 		80D143D521E90A27007C1662 /* SourceListSidebarExample.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 80D143D321E90A27007C1662 /* SourceListSidebarExample.xcdatamodeld */; };
 		80D143D721E90A28007C1662 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80D143D621E90A28007C1662 /* Assets.xcassets */; };
@@ -20,8 +21,6 @@
 		80D1440521E90BD7007C1662 /* AccountsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D1440421E90BD7007C1662 /* AccountsManager.swift */; };
 		80D1440721E9182F007C1662 /* AddAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D1440621E9182F007C1662 /* AddAccountViewController.swift */; };
 		80D1440B21E921F3007C1662 /* MainSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D1440A21E921F3007C1662 /* MainSplitViewController.swift */; };
-		80D1440E21E93A55007C1662 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D1440D21E93A55007C1662 /* Provider.swift */; };
-		80D1441021E93AB9007C1662 /* ProviderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D1440F21E93AB9007C1662 /* ProviderManager.swift */; };
 		80EA3C3021E9775300A79C83 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 80EA3C2F21E9775300A79C83 /* README.md */; };
 		9C2254C99917AC8F34FB5C59 /* Pods_SourceListSidebarExampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4DEA9B4AE058B98F1B17643 /* Pods_SourceListSidebarExampleTests.framework */; };
 		F60D7F2C5EB9C20434BBE595 /* Pods_SourceListSidebarExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A469F196CD4C26C9EB6EB4B0 /* Pods_SourceListSidebarExample.framework */; };
@@ -46,6 +45,7 @@
 
 /* Begin PBXFileReference section */
 		5E5EAEA787EBA14D4F874F50 /* Pods-SourceListSidebarExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SourceListSidebarExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-SourceListSidebarExample/Pods-SourceListSidebarExample.release.xcconfig"; sourceTree = "<group>"; };
+		8015A2E621EA08F800273942 /* HostsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostsManager.swift; sourceTree = "<group>"; };
 		80D143CC21E90A27007C1662 /* SourceListSidebarExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SourceListSidebarExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80D143CF21E90A27007C1662 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80D143D421E90A27007C1662 /* SourceListSidebarExample.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SourceListSidebarExample.xcdatamodel; sourceTree = "<group>"; };
@@ -65,8 +65,6 @@
 		80D1440421E90BD7007C1662 /* AccountsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsManager.swift; sourceTree = "<group>"; };
 		80D1440621E9182F007C1662 /* AddAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountViewController.swift; sourceTree = "<group>"; };
 		80D1440A21E921F3007C1662 /* MainSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSplitViewController.swift; sourceTree = "<group>"; };
-		80D1440D21E93A55007C1662 /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
-		80D1440F21E93AB9007C1662 /* ProviderManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderManager.swift; sourceTree = "<group>"; };
 		80EA3C2F21E9775300A79C83 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		8B7816A92C77E0873E35296B /* Pods-SourceListSidebarExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SourceListSidebarExampleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SourceListSidebarExampleTests/Pods-SourceListSidebarExampleTests.release.xcconfig"; sourceTree = "<group>"; };
 		A469F196CD4C26C9EB6EB4B0 /* Pods_SourceListSidebarExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SourceListSidebarExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -174,8 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				80D1440421E90BD7007C1662 /* AccountsManager.swift */,
-				80D1440D21E93A55007C1662 /* Provider.swift */,
-				80D1440F21E93AB9007C1662 /* ProviderManager.swift */,
+				8015A2E621EA08F800273942 /* HostsManager.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -507,11 +504,10 @@
 				80D1440321E90AFA007C1662 /* MainContentViewController.swift in Sources */,
 				80D143D521E90A27007C1662 /* SourceListSidebarExample.xcdatamodeld in Sources */,
 				80D143FF21E90AA9007C1662 /* MainWindowController.swift in Sources */,
-				80D1440E21E93A55007C1662 /* Provider.swift in Sources */,
 				80D1440121E90AD0007C1662 /* MainSidebarViewController.swift in Sources */,
-				80D1441021E93AB9007C1662 /* ProviderManager.swift in Sources */,
 				80D1440B21E921F3007C1662 /* MainSplitViewController.swift in Sources */,
 				80D143D021E90A27007C1662 /* AppDelegate.swift in Sources */,
+				8015A2E721EA08F800273942 /* HostsManager.swift in Sources */,
 				80D1440721E9182F007C1662 /* AddAccountViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

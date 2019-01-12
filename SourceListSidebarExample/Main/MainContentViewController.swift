@@ -17,7 +17,7 @@ class MainContentViewController: NSViewController {
     
     @IBOutlet weak var textFieldUsername: NSTextField!
     
-    @IBOutlet weak var textFieldProvider: NSTextField!
+    @IBOutlet weak var textFieldHost: NSTextField!
     
     @IBOutlet weak var boxAccountSettings: NSBox!
     
@@ -73,14 +73,20 @@ class MainContentViewController: NSViewController {
     func clearAccountView() {
         imageView.image = nil
         textFieldUsername.stringValue = ""
-        textFieldProvider.stringValue = ""
+        textFieldHost.stringValue = ""
         buttonDeleteAccount.isEnabled = false
     }
     
     func fillAccountView(account: Account) {
         imageView.image = NSImage.init(imageLiteralResourceName: "NSUserAccounts")
         textFieldUsername.stringValue = account.username!
-        textFieldProvider.stringValue = ProviderManager.asStringFromInt(provider: Int(account.provider))!
+        
+        if let hostOfAccount = HostsManager.sharedInstance.getHosts()?.first(where: { (host) -> Bool in
+            return host.hostId == account.hostId
+        }) {
+            textFieldHost.stringValue = "\(hostOfAccount.name!) (\(hostOfAccount.url!))"
+        }
+        
         buttonDeleteAccount.isEnabled = true
     }
 }

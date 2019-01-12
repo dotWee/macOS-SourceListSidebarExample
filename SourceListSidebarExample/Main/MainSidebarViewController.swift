@@ -21,14 +21,17 @@ class MainSidebarViewController: NSViewController {
     
     var mainWindowController: MainWindowController? = nil
     var accounts: [Account] = []
-    var providers: [Int] = []
+    var hosts: [Host] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.providers.removeAll()
-        for provider in ProviderManager.PROVIDERS_LIST {
-            providers.append(ProviderManager.asInt(provider: provider))
+        self.hosts.removeAll()
+        
+        if let hostsData = HostsManager.sharedInstance.getHosts() {
+            for host in hostsData {
+                self.hosts.append(host)
+            }
         }
         
         // Do view setup here
@@ -59,8 +62,8 @@ class MainSidebarViewController: NSViewController {
         self.outlineView.reloadData()
         
         // Expand all by default
-        for provider in self.providers {
-            self.outlineView.expandItem(provider)
+        for host in self.hosts {
+            self.outlineView.expandItem(host)
         }
     }
 }
@@ -68,36 +71,36 @@ class MainSidebarViewController: NSViewController {
 extension MainSidebarViewController: NSOutlineViewDataSource {
     
     func outlineView(_ outlineView: NSOutlineView, numberOfChildrenOfItem item: Any?) -> Int {
-        if let provider = item as? Int {
-            let accountsOfProvider = self.accounts.filter() {
-                return ($0 as Account).provider == provider
+        if let host = item as? Host {
+            let accountsOfHost = self.accounts.filter() {
+                return ($0 as Account).hostId == host.hostId
             }
             
-            return accountsOfProvider.count
+            return accountsOfHost.count
         } else {
-            return providers.count
+            return hosts.count
         }
     }
     
     func outlineView(_ outlineView: NSOutlineView, child index: Int, ofItem item: Any?) -> Any {
-        if let provider = item as? Int {
-            let accountsOfProvider = self.accounts.filter() {
-                return ($0 as Account).provider == provider
+        if let host = item as? Host {
+            let accountsOfHost = self.accounts.filter() {
+                return ($0 as Account).hostId == host.hostId
             }
             
-            return accountsOfProvider[index]
+            return accountsOfHost[index]
         }
         
-        return providers[index]
+        return hosts[index]
     }
     
     func outlineView(_ outlineView: NSOutlineView, isItemExpandable item: Any) -> Bool {
-        if let provider = item as? Int {
-            let accountsOfProvider = self.accounts.filter() {
-                return ($0 as Account).provider == provider
+        if let host = item as? Host {
+            let accountsOfHost = self.accounts.filter() {
+                return ($0 as Account).hostId == host.hostId
             }
             
-            return accountsOfProvider.count > 0
+            return accountsOfHost.count > 0
         }
         
         return false
@@ -117,10 +120,10 @@ extension MainSidebarViewController: NSOutlineViewDelegate {
     func outlineView(_ outlineView: NSOutlineView, viewFor tableColumn: NSTableColumn?, item: Any) -> NSView? {
         var view: NSTableCellView?
         
-        if let provider = item as? Int {
+        if let host = item as? Host {
             view = outlineView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "HeaderCell"), owner: self) as? NSTableCellView
             if let textField = view?.textField {
-                textField.stringValue = ProviderManager.asStringFromInt(provider: provider)!
+                textField.stringValue = host.name!
                 //textField.sizeToFit()
             }
             

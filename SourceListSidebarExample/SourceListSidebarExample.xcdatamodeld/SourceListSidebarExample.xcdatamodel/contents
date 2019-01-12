@@ -2,10 +2,16 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18C54" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Account" representedClassName=".Account" syncable="YES" codeGenerationType="class">
         <attribute name="accountId" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="provider" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="hostId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="Host" representedClassName=".Host" syncable="YES" codeGenerationType="class">
+        <attribute name="hostId" attributeType="String" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="url" attributeType="String" syncable="YES"/>
+    </entity>
     <elements>
-        <element name="Account" positionX="-63" positionY="-18" width="128" height="88"/>
+        <element name="Account" positionX="-63" positionY="-18" width="128" height="90"/>
+        <element name="Host" positionX="-63" positionY="0" width="128" height="90"/>
     </elements>
 </model>

@@ -916,7 +916,7 @@ Gw
                                                             <subviews>
                                                                 <textField verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dD0-VA-NpB">
                                                                     <rect key="frame" x="6" y="-2" width="143" height="18"/>
-                                                                    <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Provider" id="75n-2p-NCP">
+                                                                    <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Host" id="75n-2p-NCP">
                                                                         <font key="font" metaFont="systemBold" size="12"/>
                                                                         <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -1020,7 +1020,7 @@ Gw
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3E7-Sx-XOC">
                                 <rect key="frame" x="78" y="239" width="254" height="17"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="Provider" id="ibg-ps-WFa">
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Host (URL)" id="ibg-ps-WFa">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -1070,7 +1070,7 @@ Gw
                         <outlet property="buttonDeleteAccount" destination="ZUn-aR-aOk" id="S1R-rt-js1"/>
                         <outlet property="imageView" destination="3Jv-Wu-u4c" id="zUc-j9-IKV"/>
                         <outlet property="onButtonDeleteAccountAction" destination="ZUn-aR-aOk" id="zHI-3D-HQ1"/>
-                        <outlet property="textFieldProvider" destination="3E7-Sx-XOC" id="kRt-zq-bpO"/>
+                        <outlet property="textFieldHost" destination="3E7-Sx-XOC" id="kRt-zq-bpO"/>
                         <outlet property="textFieldUsername" destination="Kxz-qm-Ofq" id="flz-VT-qbY"/>
                     </connections>
                 </viewController>
