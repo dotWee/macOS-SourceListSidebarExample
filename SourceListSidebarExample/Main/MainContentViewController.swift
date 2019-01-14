@@ -71,16 +71,15 @@ class MainContentViewController: NSViewController {
     }
     
     func clearAccountView() {
-        imageView.image = nil
         textFieldUsername.stringValue = ""
         textFieldHost.stringValue = ""
         
+        imageView.isHidden = true
         boxAccountSettings.isHidden = true
         buttonDeleteAccount.isHidden = true
     }
     
     func fillAccountView(account: Account) {
-        imageView.image = NSImage.init(imageLiteralResourceName: "NSUserAccounts")
         textFieldUsername.stringValue = account.username!
         
         if let hostOfAccount = DataManager.sharedInstance.getAllHosts()?.first(where: { (host) -> Bool in
@@ -89,6 +88,7 @@ class MainContentViewController: NSViewController {
             textFieldHost.stringValue = "\(hostOfAccount.name!) (\(hostOfAccount.url!))"
         }
         
+        imageView.isHidden = false
         boxAccountSettings.isHidden = false
         buttonDeleteAccount.isHidden = false
     }
