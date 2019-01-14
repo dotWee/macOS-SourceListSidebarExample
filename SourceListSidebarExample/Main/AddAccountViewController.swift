@@ -27,7 +27,7 @@ class AddAccountViewController: NSViewController {
     @IBAction func onButtonSaveAction(_ sender: NSButton) {
         let username = textFieldUsername.stringValue
         let hostId = hosts[self.popUpButtonProvider.indexOfSelectedItem].hostId
-        let account = AccountsManager.sharedInstance.addAccount(username: username, hostId: hostId!)
+        let account = DataManager.sharedInstance.addAccount(username: username, hostId: hostId!)
         
         print("AddAccountViewController: Created account=\(String(describing: account)) with values username=\(username) hostId=\(hostId)")
         self.dismiss(self)
@@ -41,7 +41,7 @@ class AddAccountViewController: NSViewController {
         super.viewDidLoad()
         
         // Do view setup here.
-        if let hosts = HostsManager.sharedInstance.getHosts() {
+        if let hosts = DataManager.sharedInstance.getAllHosts() {
             for host in hosts {
                 self.names.append(host.name!)
                 self.hosts.append(host)

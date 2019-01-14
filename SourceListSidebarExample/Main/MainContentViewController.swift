@@ -25,7 +25,7 @@ class MainContentViewController: NSViewController {
     
     @IBAction func onButtonRemoveAccountAction(_ sender: NSButton) {
         if self.mainWindowController != nil {
-            AccountsManager.sharedInstance.deleteAccount(account: account!)
+            DataManager.sharedInstance.deleteAccount(account: account!)
             
             self.mainWindowController?.onRefreshAccounts()
             self.clearAccountView()
@@ -65,7 +65,7 @@ class MainContentViewController: NSViewController {
         }
         
         // Clear account view when data is changed
-        AccountsManager.sharedInstance.accounts.asObservable().subscribe(onNext: { (accounts) in
+        DataManager.sharedInstance.accounts.asObservable().subscribe(onNext: { (accounts) in
             self.clearAccountView()
         }).disposed(by: appDelegate.mainDisposeBag)
     }
@@ -83,7 +83,7 @@ class MainContentViewController: NSViewController {
         imageView.image = NSImage.init(imageLiteralResourceName: "NSUserAccounts")
         textFieldUsername.stringValue = account.username!
         
-        if let hostOfAccount = HostsManager.sharedInstance.getHosts()?.first(where: { (host) -> Bool in
+        if let hostOfAccount = DataManager.sharedInstance.getAllHosts()?.first(where: { (host) -> Bool in
             return host.hostId == account.hostId
         }) {
             textFieldHost.stringValue = "\(hostOfAccount.name!) (\(hostOfAccount.url!))"

@@ -36,7 +36,7 @@ class MainWindowController: NSWindowController {
     
     @IBAction func onToolbarClearAccountsAction(_ sender: NSToolbarItem) {
         print("MainWindowController: onToolbarClearAccountsAction")
-        AccountsManager.sharedInstance.deleteAll()
+        DataManager.sharedInstance.deleteAllAccounts()
     }
     
     override func windowDidLoad() {
@@ -55,7 +55,7 @@ class MainWindowController: NSWindowController {
     
     func onRefreshAccounts() {
         print("MainWindowController: onRefreshAccounts")
-        AccountsManager.sharedInstance.getAccounts()
+        DataManager.sharedInstance.getAllAccounts()
     }
 
     func dialogOkCancel(question: String, text: String) -> Bool {

@@ -28,14 +28,14 @@ class MainSidebarViewController: NSViewController {
         
         self.hosts.removeAll()
         
-        if let hostsData = HostsManager.sharedInstance.getHosts() {
+        if let hostsData = DataManager.sharedInstance.getAllHosts() {
             for host in hostsData {
                 self.hosts.append(host)
             }
         }
         
         // Do view setup here
-        AccountsManager.sharedInstance.accounts.asObservable()
+        DataManager.sharedInstance.accounts.asObservable()
             .subscribe(onNext: { (accounts) in
                 print("MainSidebarViewController: onNext accounts=\(String(describing: accounts))")
                 self.onDataChanged(accounts: accounts)
@@ -56,7 +56,7 @@ class MainSidebarViewController: NSViewController {
         if accounts != nil {
             self.accounts = accounts!
         } else {
-            self.accounts = AccountsManager.sharedInstance.accounts.value ?? []
+            self.accounts = DataManager.sharedInstance.accounts.value ?? []
         }
         
         self.outlineView.reloadData()
