@@ -26,25 +26,27 @@ class MainSidebarViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.hosts.removeAll()
-        
-        if let hostsData = DataManager.sharedInstance.getAllHosts() {
-            for host in hostsData {
-                self.hosts.append(host)
-            }
-        }
-        
         // Do view setup here
+        self.outlineView.delegate = self
+        self.outlineView.dataSource = self
+        
+        // Listen on accounts change
         DataManager.sharedInstance.accounts.asObservable()
             .subscribe(onNext: { (accounts) in
                 print("MainSidebarViewController: onNext accounts=\(String(describing: accounts))")
-                self.onDataChanged(accounts: accounts)
+                self.onAccountsDataChanged(accounts: accounts)
             })
             .disposed(by: (NSApplication.shared.delegate as! AppDelegate).mainDisposeBag)
+        self.onAccountsDataChanged(accounts: DataManager.sharedInstance.getAllAccounts())
         
-        self.outlineView.delegate = self
-        self.outlineView.dataSource = self
-        self.onDataChanged(accounts: accounts)
+        // Listen on hosts change
+        DataManager.sharedInstance.hosts.asObservable()
+            .subscribe(onNext: { (hosts) in
+                print("MainSidebarViewController: onNext hosts=\(String(describing: hosts))")
+                self.onHostsDataChanged(hosts: hosts)
+            })
+            .disposed(by: (NSApplication.shared.delegate as! AppDelegate).mainDisposeBag)
+        self.onHostsDataChanged(hosts: DataManager.sharedInstance.getAllHosts())
     }
     
     override func viewDidAppear() {
@@ -52,15 +54,21 @@ class MainSidebarViewController: NSViewController {
         self.mainWindowController!.mainSidebarViewController = self
     }
     
-    private func onDataChanged(accounts: [Account]?) {
-        if accounts != nil {
-            self.accounts = accounts!
-        } else {
-            self.accounts = DataManager.sharedInstance.accounts.value ?? []
-        }
+    private func onHostsDataChanged(hosts: [Host]?) {
+        self.hosts = hosts ?? []
         
         self.outlineView.reloadData()
+        expandAll()
+    }
+    
+    private func onAccountsDataChanged(accounts: [Account]?) {
+        self.accounts = accounts ?? []
         
+        self.outlineView.reloadData()
+        expandAll()
+    }
+    
+    private func expandAll() {
         // Expand all by default
         for host in self.hosts {
             self.outlineView.expandItem(host)
@@ -151,8 +159,10 @@ extension MainSidebarViewController: NSOutlineViewDelegate {
         if let account = outlineView.item(atRow: selectedIndex) as? Account {
             if self.mainWindowController != nil {
                 self.mainWindowController!.selectedAccount.value = account
-            } else {
-                print("MainSidebarViewController: Error, couldn't send changed selectedAccount")
+            }
+        } else if let host = outlineView.item(atRow: selectedIndex) as? Host {
+            if self.mainWindowController != nil {
+                self.mainWindowController!.selectedHost.value = host
             }
         }
     }

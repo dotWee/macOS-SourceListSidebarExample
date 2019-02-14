@@ -18,6 +18,7 @@ class MainWindowController: NSWindowController {
     var mainContentViewController: MainContentViewController? = nil
     
     var selectedAccount: Variable<Account?> = Variable(nil)
+    var selectedHost: Variable<Host?> = Variable(nil)
     
     @IBAction func onToolbarAddAccountAction(_ sender: NSToolbarItem) {
         print("MainWindowController: onToolbarAddAccountAction")
@@ -26,7 +27,7 @@ class MainWindowController: NSWindowController {
     
     @IBAction func onToolbarAddHostAction(_ sender: NSToolbarItem) {
         print("MainWindowController: onToolbarAddHostAction")
-        //self.onAddAccount()
+        self.onAddHost()
     }
     
     @IBAction func onToolbarRefreshAction(_ sender: NSToolbarItem) {
@@ -48,6 +49,14 @@ class MainWindowController: NSWindowController {
     func onAddAccount() {
         if mainSplitViewController != nil {
             mainSplitViewController?.onShowNewAccountSheet()
+        } else {
+            print("MainWindowController: Error mainViewController is nil")
+        }
+    }
+    
+    func onAddHost() {
+        if mainSplitViewController != nil {
+            mainSplitViewController?.onShowNewHostSheet()
         } else {
             print("MainWindowController: Error mainViewController is nil")
         }

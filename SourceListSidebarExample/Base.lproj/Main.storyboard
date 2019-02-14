@@ -777,10 +777,10 @@
             </objects>
             <point key="canvasLocation" x="121" y="245"/>
         </scene>
-        <!--New account-->
+        <!--New Account Sheet-->
         <scene sceneID="QPz-mF-kQl">
             <objects>
-                <viewController title="New account" storyboardIdentifier="AddAccountViewController" id="dOY-L3-KLZ" customClass="AddAccountViewController" customModule="SourceListSidebarExample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="New Account Sheet" storyboardIdentifier="AddAccountViewController" id="dOY-L3-KLZ" customClass="AddAccountViewController" customModule="SourceListSidebarExample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="d8q-St-dH6">
                         <rect key="frame" x="0.0" y="0.0" width="308" height="191"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -855,7 +855,7 @@
                             </box>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="nKD-wp-jjY">
                                 <rect key="frame" x="235" y="5" width="59" height="32"/>
-                                <buttonCell key="cell" type="push" title="OK" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="7f7-Vp-w8L">
+                                <buttonCell key="cell" type="push" title="OK" bezelStyle="rounded" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="7f7-Vp-w8L">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                     <string key="keyEquivalent" base64-UTF8="YES">
@@ -1129,6 +1129,131 @@ Gw
                 <customObject id="ZYk-83-UHQ" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="218" y="1087"/>
+        </scene>
+        <!--New Host Sheet-->
+        <scene sceneID="pwd-nv-wPL">
+            <objects>
+                <viewController title="New Host Sheet" storyboardIdentifier="AddHostViewController" id="UgU-hd-mc1" customClass="AddHostViewController" customModule="SourceListSidebarExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="GtS-Gu-5gg">
+                        <rect key="frame" x="0.0" y="0.0" width="308" height="191"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="VZH-DI-uxl">
+                                <rect key="frame" x="235" y="5" width="59" height="32"/>
+                                <buttonCell key="cell" type="push" title="OK" bezelStyle="rounded" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="npQ-Du-Mwi">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="buttonOkActionHandler:" target="UgU-hd-mc1" id="HlS-oz-xhS"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3Sj-Bo-ht6">
+                                <rect key="frame" x="153" y="5" width="82" height="32"/>
+                                <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="saf-dW-qma">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <string key="keyEquivalent" base64-UTF8="YES">
+Gw
+</string>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="buttonCancelActionHandler:" target="UgU-hd-mc1" id="Vu9-aM-htJ"/>
+                                </connections>
+                            </button>
+                            <box title="New Host Details" translatesAutoresizingMaskIntoConstraints="NO" id="w75-74-lEa">
+                                <rect key="frame" x="17" y="37" width="274" height="134"/>
+                                <view key="contentView" id="IX9-Sn-qMz">
+                                    <rect key="frame" x="3" y="3" width="268" height="116"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <gridView xPlacement="leading" yPlacement="bottom" rowAlignment="none" translatesAutoresizingMaskIntoConstraints="NO" id="cia-ET-b16">
+                                            <rect key="frame" x="20" y="46" width="228" height="50"/>
+                                            <rows>
+                                                <gridRow yPlacement="center" id="EF3-ta-w41"/>
+                                                <gridRow yPlacement="center" id="g0e-rF-MCZ"/>
+                                            </rows>
+                                            <columns>
+                                                <gridColumn id="za8-Dp-c5a"/>
+                                                <gridColumn xPlacement="fill" width="150" id="Ja0-Fq-V01"/>
+                                            </columns>
+                                            <gridCells>
+                                                <gridCell row="EF3-ta-w41" column="za8-Dp-c5a" id="tPP-Qp-QOe">
+                                                    <textField key="contentView" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Xkr-i4-rXI">
+                                                        <rect key="frame" x="-2" y="31" width="70" height="17"/>
+                                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Hostname:" id="2AT-ct-a36">
+                                                            <font key="font" usesAppearanceFont="YES"/>
+                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                        </textFieldCell>
+                                                    </textField>
+                                                </gridCell>
+                                                <gridCell row="EF3-ta-w41" column="Ja0-Fq-V01" id="4bW-sj-1wd">
+                                                    <textField key="contentView" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="55x-17-CBe">
+                                                        <rect key="frame" x="78" y="28" width="150" height="22"/>
+                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="BHY-CA-YqC">
+                                                            <font key="font" usesAppearanceFont="YES"/>
+                                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                        </textFieldCell>
+                                                    </textField>
+                                                </gridCell>
+                                                <gridCell row="g0e-rF-MCZ" column="za8-Dp-c5a" id="rRd-11-JoL">
+                                                    <textField key="contentView" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="eCF-ro-fIX">
+                                                        <rect key="frame" x="-2" y="3" width="34" height="17"/>
+                                                        <textFieldCell key="cell" lineBreakMode="clipping" title="URL:" id="KUu-dF-P5V">
+                                                            <font key="font" usesAppearanceFont="YES"/>
+                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                        </textFieldCell>
+                                                    </textField>
+                                                </gridCell>
+                                                <gridCell row="g0e-rF-MCZ" column="Ja0-Fq-V01" id="5us-MV-OWA">
+                                                    <textField key="contentView" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="DTC-sL-Wm0">
+                                                        <rect key="frame" x="78" y="0.0" width="150" height="22"/>
+                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="gJt-G7-ffb">
+                                                            <font key="font" usesAppearanceFont="YES"/>
+                                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                        </textFieldCell>
+                                                    </textField>
+                                                </gridCell>
+                                            </gridCells>
+                                        </gridView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="cia-ET-b16" firstAttribute="top" secondItem="IX9-Sn-qMz" secondAttribute="top" constant="20" id="F3c-Ms-1LY"/>
+                                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="cia-ET-b16" secondAttribute="bottom" constant="20" id="SeA-ey-5tN"/>
+                                        <constraint firstAttribute="trailing" secondItem="cia-ET-b16" secondAttribute="trailing" constant="20" id="cDL-iN-9GV"/>
+                                        <constraint firstItem="cia-ET-b16" firstAttribute="leading" secondItem="IX9-Sn-qMz" secondAttribute="leading" constant="20" id="t6s-1c-rBK"/>
+                                    </constraints>
+                                </view>
+                            </box>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="VZH-DI-uxl" firstAttribute="top" secondItem="w75-74-lEa" secondAttribute="bottom" constant="8" id="4Uu-eg-P8m"/>
+                            <constraint firstItem="3Sj-Bo-ht6" firstAttribute="top" secondItem="w75-74-lEa" secondAttribute="bottom" constant="8" id="EtW-5d-PMO"/>
+                            <constraint firstItem="VZH-DI-uxl" firstAttribute="leading" secondItem="3Sj-Bo-ht6" secondAttribute="trailing" constant="12" id="SD1-3q-OmE"/>
+                            <constraint firstItem="w75-74-lEa" firstAttribute="top" secondItem="GtS-Gu-5gg" secondAttribute="top" constant="20" id="VkM-dc-GZ0"/>
+                            <constraint firstAttribute="trailing" secondItem="VZH-DI-uxl" secondAttribute="trailing" constant="20" id="afv-Kn-RtY"/>
+                            <constraint firstItem="w75-74-lEa" firstAttribute="leading" secondItem="GtS-Gu-5gg" secondAttribute="leading" constant="20" id="efR-B5-LD9"/>
+                            <constraint firstAttribute="trailing" secondItem="w75-74-lEa" secondAttribute="trailing" constant="20" id="j9q-ns-4WK"/>
+                            <constraint firstAttribute="bottom" secondItem="VZH-DI-uxl" secondAttribute="bottom" constant="12" id="keQ-Q4-9Wr"/>
+                            <constraint firstItem="3Sj-Bo-ht6" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="GtS-Gu-5gg" secondAttribute="leading" constant="60" id="wxS-dY-Cjy"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="buttonOk" destination="VZH-DI-uxl" id="MzU-gC-hoW"/>
+                        <outlet property="textFieldHostName" destination="55x-17-CBe" id="7CE-Uo-6xv"/>
+                        <outlet property="textFieldHostUrl" destination="DTC-sL-Wm0" id="7aK-Vm-a6S"/>
+                    </connections>
+                </viewController>
+                <customObject id="YlJ-DB-aiJ" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="907" y="598.5"/>
         </scene>
     </scenes>
     <resources>

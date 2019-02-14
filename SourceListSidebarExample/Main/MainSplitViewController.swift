@@ -14,6 +14,7 @@ import AppKit
 class MainSplitViewController: NSSplitViewController {
     
     let addAccountViewController = NSStoryboard.init(name: "Main", bundle: nil).instantiateController(withIdentifier: "AddAccountViewController") as! AddAccountViewController
+    let addHostViewController = NSStoryboard.init(name: "Main", bundle: nil).instantiateController(withIdentifier: "AddHostViewController") as! AddHostViewController
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,5 +28,9 @@ class MainSplitViewController: NSSplitViewController {
     
     func onShowNewAccountSheet() {
         self.presentAsSheet(addAccountViewController)
+    }
+    
+    func onShowNewHostSheet() {
+        self.presentAsSheet(addHostViewController)
     }
 }
