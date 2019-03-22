@@ -1,15 +1,15 @@
 PODS:
-  - RxAtomic (4.4.1)
-  - RxBlocking (4.4.1):
-    - RxAtomic (~> 4.4)
-    - RxSwift (~> 4.0)
-  - RxCocoa (4.4.1):
-    - RxSwift (~> 4.0)
-  - RxSwift (4.4.1):
-    - RxAtomic (~> 4.4)
-  - RxTest (4.4.1):
-    - RxAtomic (~> 4.4)
-    - RxSwift (~> 4.0)
+  - RxAtomic (4.4.2)
+  - RxBlocking (4.4.2):
+    - RxAtomic (>= 4.4.2, ~> 4.4)
+    - RxSwift (>= 4.4.2, ~> 4.4)
+  - RxCocoa (4.4.2):
+    - RxSwift (>= 4.4.2, ~> 4.4)
+  - RxSwift (4.4.2):
+    - RxAtomic (>= 4.4.2, ~> 4.4)
+  - RxTest (4.4.2):
+    - RxAtomic (>= 4.4.2, ~> 4.4)
+    - RxSwift (>= 4.4.2, ~> 4.4)
 
 DEPENDENCIES:
   - RxBlocking (~> 4.4.0)
@@ -26,12 +26,12 @@ SPEC REPOS:
     - RxTest
 
 SPEC CHECKSUMS:
-  RxAtomic: f8d6adc1ccb87a767811269e4875887bc74dbf19
-  RxBlocking: 5508e90d36ca2304632dc9378ece4e9b5d4bf656
-  RxCocoa: 2f35a76bf8887872e28a1914112395b11b8e0e64
-  RxSwift: 92fcf68dfef21f3e2ab1965363d9e7b3d787597e
-  RxTest: f8e548755ca3c7502dc41c7d3b28802c90115a38
+  RxAtomic: d00e97c10db88c6f08540e0bf2752fc5a2404167
+  RxBlocking: e96fdda1473d81332a6ed2cface935dc2167a122
+  RxCocoa: 477990dc3b4c3ff55fb0ac77e1cc06244e0aaec8
+  RxSwift: 74c29b693c8e42b0f64400e8b06564575742d649
+  RxTest: 6433d5b6229f5de424fa534bc22b5e6c38b0b671
 
 PODFILE CHECKSUM: e137823ee98a331b180b65607c215de51df26a7c
 
-COCOAPODS: 1.6.0
+COCOAPODS: 1.6.1
