@@ -7,21 +7,21 @@ target 'SourceListSidebarExample' do
   use_frameworks!
 
   # Pods for SourceListSidebarExample
-  pod 'RxSwift',    '~> 4.4.0'
-  pod 'RxCocoa',    '~> 4.4.0'
+  pod 'RxSwift',    '~> 5.0.1'
+  pod 'RxCocoa',    '~> 5.0.1'
 
   target 'SourceListSidebarExampleTests' do
     inherit! :search_paths
     # Pods for testing
-    pod 'RxBlocking', '~> 4.4.0'
-    pod 'RxTest',     '~> 4.4.0'
+    pod 'RxBlocking', '~> 5.0.1'
+    pod 'RxTest',     '~> 5.0.1'
   end
 
   target 'SourceListSidebarExampleUITests' do
     inherit! :search_paths
     # Pods for testing
-    pod 'RxBlocking', '~> 4.4.0'
-    pod 'RxTest',     '~> 4.4.0'
+    pod 'RxBlocking', '~> 5.0.1'
+    pod 'RxTest',     '~> 5.0.1'
   end
 
 end
