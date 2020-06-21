@@ -6,8 +6,8 @@ Example Swift 4.2 implementation of the [Sidebar Use Case](https://developer.app
 
 - Written on the Swift 4.2 language level platform
 - [CoreData](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/CoreData/index.html) to preserve data between application sessions
-- [RxSwift](https://github.com/ReactiveX/RxSwift) (*4.4.2*) with [RxCocoa](https://github.com/ReactiveX/RxSwift/tree/master/RxCocoa) (*4.4.2*) to handle interactions
-- [CocoaPods](https://cocoapods.org) as dependency manager
+- [RxSwift](https://github.com/ReactiveX/RxSwift) (*5.1.1*) with [RxCocoa](https://github.com/ReactiveX/RxSwift/tree/master/RxCocoa) (*5.1.1*) to handle interactions
+- [Swift Package Manager](https://swift.org/package-manager/) as dependency manager
 - Apple's [Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines/macos/overview/visual-index/) for the macOS platform
 
 ## Screenshots
@@ -42,16 +42,10 @@ $ git clone https://github.com/dotWee/macOS-SourceListSidebarExample.git
 $ cd macOS-SourceListSidebarExample
 ```
 
-Install dependencies:
+Open the Xcode project:
 
 ```bash
-$ pod install
-```
-
-Open project with Xcode:
-
-```bash
-$ open SourceListSidebarExample.xcworkspace
+$ open SourceListSidebarExample.xcodeproj
 ```
 
 ## License
