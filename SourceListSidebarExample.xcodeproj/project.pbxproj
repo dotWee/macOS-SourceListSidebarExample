@@ -22,6 +22,9 @@
 		80D1440321E90AFA007C1662 /* MainContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D1440221E90AFA007C1662 /* MainContentViewController.swift */; };
 		80D1440721E9182F007C1662 /* AddAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D1440621E9182F007C1662 /* AddAccountViewController.swift */; };
 		80D1440B21E921F3007C1662 /* MainSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D1440A21E921F3007C1662 /* MainSplitViewController.swift */; };
+		80DACD75249F7F7F00E447A1 /* Podfile.lock in Resources */ = {isa = PBXBuildFile; fileRef = 80DACD72249F7F7F00E447A1 /* Podfile.lock */; };
+		80DACD76249F7F7F00E447A1 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 80DACD73249F7F7F00E447A1 /* LICENSE */; };
+		80DACD77249F7F7F00E447A1 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 80DACD74249F7F7F00E447A1 /* Podfile */; };
 		80EA3C3021E9775300A79C83 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 80EA3C2F21E9775300A79C83 /* README.md */; };
 		80FB936C21EDEE4700F2DE05 /* AddHostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FB936B21EDEE4700F2DE05 /* AddHostViewController.swift */; };
 		9C2254C99917AC8F34FB5C59 /* Pods_SourceListSidebarExampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4DEA9B4AE058B98F1B17643 /* Pods_SourceListSidebarExampleTests.framework */; };
@@ -68,6 +71,9 @@
 		80D1440221E90AFA007C1662 /* MainContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContentViewController.swift; sourceTree = "<group>"; };
 		80D1440621E9182F007C1662 /* AddAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountViewController.swift; sourceTree = "<group>"; };
 		80D1440A21E921F3007C1662 /* MainSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSplitViewController.swift; sourceTree = "<group>"; };
+		80DACD72249F7F7F00E447A1 /* Podfile.lock */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile.lock; sourceTree = "<group>"; };
+		80DACD73249F7F7F00E447A1 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		80DACD74249F7F7F00E447A1 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		80EA3C2F21E9775300A79C83 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		80FB936B21EDEE4700F2DE05 /* AddHostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHostViewController.swift; sourceTree = "<group>"; };
 		8B7816A92C77E0873E35296B /* Pods-SourceListSidebarExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SourceListSidebarExampleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SourceListSidebarExampleTests/Pods-SourceListSidebarExampleTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -122,9 +128,12 @@
 				80D143E421E90A29007C1662 /* SourceListSidebarExampleTests */,
 				80D143EF21E90A29007C1662 /* SourceListSidebarExampleUITests */,
 				80D143CD21E90A27007C1662 /* Products */,
-				80EA3C2F21E9775300A79C83 /* README.md */,
 				97AA4D7EA29DE9E5C1678E5E /* Pods */,
 				EF441EC21862A1EE310723B3 /* Frameworks */,
+				80EA3C2F21E9775300A79C83 /* README.md */,
+				80DACD73249F7F7F00E447A1 /* LICENSE */,
+				80DACD74249F7F7F00E447A1 /* Podfile */,
+				80DACD72249F7F7F00E447A1 /* Podfile.lock */,
 			);
 			sourceTree = "<group>";
 		};
@@ -329,9 +338,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80DACD77249F7F7F00E447A1 /* Podfile in Resources */,
 				80EA3C3021E9775300A79C83 /* README.md in Resources */,
 				80D143D721E90A28007C1662 /* Assets.xcassets in Resources */,
+				80DACD75249F7F7F00E447A1 /* Podfile.lock in Resources */,
 				80D143DA21E90A28007C1662 /* Main.storyboard in Resources */,
+				80DACD76249F7F7F00E447A1 /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
