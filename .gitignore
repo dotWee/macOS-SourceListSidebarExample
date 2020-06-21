@@ -1,6 +1,6 @@
 
-# Created by https://www.gitignore.io/api/xcode,macos,cocoapods
-# Edit at https://www.gitignore.io/?templates=xcode,macos,cocoapods
+# Created by https://www.toptal.com/developers/gitignore/api/macos,xcode,cocoapods
+# Edit at https://www.toptal.com/developers/gitignore?templates=macos,xcode,cocoapods
 
 ### CocoaPods ###
 ## CocoaPods GitIgnore Template
@@ -63,12 +63,14 @@ DerivedData/
 *.perspectivev3
 !default.perspectivev3
 
+## Gcc Patch
+/*.gcno
+
 ### Xcode Patch ###
 *.xcodeproj/*
 !*.xcodeproj/project.pbxproj
 !*.xcodeproj/xcshareddata/
 !*.xcworkspace/contents.xcworkspacedata
-/*.gcno
 **/xcshareddata/WorkspaceSettings.xcsettings
 
-# End of https://www.gitignore.io/api/xcode,macos,cocoapods
+# End of https://www.toptal.com/developers/gitignore/api/macos,xcode,cocoapods
